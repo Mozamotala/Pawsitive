@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pawsitive Pet Academy — browse all courses.">
+<title>Pawsitive Pet Academy | Courses Summary</title>
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="topbar"><div class="container"><span>&#128062; Caring, trustworthy pet care &amp; training</span><span>Durban, South Africa</span></div></div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Pawsitive Pet Academy home">
+      <span class="brand-mark"><svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 76c-19 0-31-11-31-25 0-12 10-19 20-16 4-11 18-11 22 0 11-3 20 4 20 16 0 14-12 25-31 25Z" fill="white"/><circle cx="30" cy="31" r="9" fill="white"/><circle cx="50" cy="22" r="9" fill="white"/><circle cx="70" cy="31" r="9" fill="white"/></svg></span>
+      <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html" class="active">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a>
+      <a class="primary" href="feescalculator.html">Get a Quote</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div id="webMenu" class="mobile-menu">
+    <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a><a class="primary" href="feescalculator.html">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Courses</span><h2>Choose the right learning path.</h2><p>Review duration and fees, then head to the fees calculator to add one or more courses to your quotation.</p></div>
+      <div class="course-groups">
+        <div class="course-group"><h3>Six-Month Courses <span>Professional development</span></h3><div class="course-grid">
+          <article class="course-card"><div class="course-image"><svg viewBox="0 0 100 100" fill="none"><path d="M50 75c-17 0-27-10-27-23 0-10 8-16 17-14 3-9 14-9 18 0 9-2 17 4 17 14 0 13-10 23-25 23Z" fill="var(--tan)"/><circle cx="33" cy="31" r="8" fill="var(--tan)"/><circle cx="50" cy="23" r="8" fill="var(--tan)"/><circle cx="67" cy="31" r="8" fill="var(--tan)"/></svg></div><div class="course-body"><h3><a href="detailspage.html">Canine Obedience Training</a></h3><div class="meta">6 months</div><div class="price">R1,500</div><p>Build practical obedience skills and a stronger communication routine with your dog.</p><a class="primary" href="detailspage.html">View details</a></div></article>
+          <article class="course-card"><div class="course-image"><svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="35" fill="var(--tan)"/><path d="M30 43c9-12 31-12 40 0M36 58c8 7 20 7 28 0" stroke="white" stroke-width="5" stroke-linecap="round"/></svg></div><div class="course-body"><h3>Pet Grooming Diploma</h3><div class="meta">6 months</div><div class="price">R1,500</div><p>Develop grooming knowledge and practical care skills for healthier, happier pets.</p><a class="primary" href="feescalculator.html#grooming">Select this course</a></div></article>
+        </div></div>
+        <div class="course-group"><h3>Six-Week Course <span>Foundations</span></h3><div class="course-grid">
+          <article class="course-card"><div class="course-image"><svg viewBox="0 0 100 100" fill="none"><path d="M27 43 22 25l18 8M73 43l5-18-18 8" stroke="var(--tan)" stroke-width="10" stroke-linecap="round"/><circle cx="50" cy="55" r="27" fill="var(--tan)"/><circle cx="41" cy="52" r="4" fill="white"/><circle cx="59" cy="52" r="4" fill="white"/><path d="M43 64c5 4 9 4 14 0" stroke="white" stroke-width="4" stroke-linecap="round"/></svg></div><div class="course-body"><h3>Puppy Care Module</h3><div class="meta">6 weeks</div><div class="price">R750</div><p>A practical introduction to puppy care, routines, socialisation and everyday wellbeing.</p><a class="primary" href="feescalculator.html#puppy">Select this course</a></div></article>
+        </div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-grid"><div><strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>Caring, trustworthy pet care &amp; training.</small></div><div><small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small></div></div></footer>
+<div id="toast" class="toast"></div>
+<script src="../js/script.js"></script>
+</body>
+</html>
