@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/btnBackToCourses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back to Courses"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="18dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/bg_course_image">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_courses"
+                    app:tint="@color/tan" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="SIX-MONTH PROGRAMME"
+                android:textColor="@color/brown"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:background="@drawable/bg_pill"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Canine Obedience Training"
+                android:textColor="@color/brown"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Duration: 6 months"
+                android:textColor="@color/muted"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R1,500"
+                android:textColor="@color/tan"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Build practical obedience skills and a stronger communication routine with your dog. This programme covers lead work, recall, impulse control and everyday household manners, guided by hands-on instruction and clear progress milestones."
+                android:textColor="@color/ink" />
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="✓  Weekly hands-on sessions with a qualified trainer." android:textColor="@color/ink" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="✓  Covers lead walking, recall, sit/stay and impulse control." android:textColor="@color/ink" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="✓  Progress check-ins so owners can track improvement." android:textColor="@color/ink" />
+
+            <Button
+                android:id="@+id/btnSelectDetailCourse"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:backgroundTint="@color/tan"
+                android:text="Select this course" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

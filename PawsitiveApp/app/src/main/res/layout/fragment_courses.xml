@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COURSES"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:background="@drawable/bg_pill"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Choose the right learning path."
+            android:textColor="@color/brown"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:text="Review duration and fees, then head to the fees calculator to add one or more courses to your quotation."
+            android:textColor="@color/muted" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Six-Month Courses · Professional development"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:id="@+id/sixMonthContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Six-Week Course · Foundations"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:id="@+id/sixWeekContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</ScrollView>
