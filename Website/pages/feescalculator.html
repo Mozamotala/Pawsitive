@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pawsitive Pet Academy — fees calculator and pricing.">
+<title>Pawsitive Pet Academy | Pricing</title>
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="topbar"><div class="container"><span>&#128062; Caring, trustworthy pet care &amp; training</span><span>Durban, South Africa</span></div></div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Pawsitive Pet Academy home">
+      <span class="brand-mark"><svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 76c-19 0-31-11-31-25 0-12 10-19 20-16 4-11 18-11 22 0 11-3 20 4 20 16 0 14-12 25-31 25Z" fill="white"/><circle cx="30" cy="31" r="9" fill="white"/><circle cx="50" cy="22" r="9" fill="white"/><circle cx="70" cy="31" r="9" fill="white"/></svg></span>
+      <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html" class="active">Pricing</a><a href="contactus.html">Contact</a>
+      <a class="primary" href="feescalculator.html">Get a Quote</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div id="webMenu" class="mobile-menu">
+    <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a><a class="primary" href="feescalculator.html">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Pricing</span><h2>Transparent multi-course discounts.</h2><p>The calculator below keeps the selected courses, discount and running total visible in real time.</p></div>
+      <div class="pricing-grid">
+        <div class="price-rule"><span class="meta">2 courses</span><strong>5%</strong><p>Save when you enrol in two courses together.</p></div>
+        <div class="price-rule"><span class="meta">3 courses</span><strong>10%</strong><p>Unlock the next discount tier when all three listed courses are selected.</p></div>
+        <div class="price-rule"><span class="meta">4+ courses</span><strong>15%</strong><p>The proposal defines a 15% upper tier for larger multi-course enrolments.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Fees Calculator</span><h2>Build your quotation.</h2><p>Select one or more courses. Your discount updates automatically. VAT is shown separately so the estimate is easy to understand.</p></div>
+      <div class="calculator-wrap">
+        <div class="panel">
+          <h3>Select courses</h3>
+          <div id="courseOptions">
+            <label class="course-option"><input type="checkbox" value="obedience" onchange="updateCalculator()"><div class="option-info"><strong>Canine Obedience Training</strong><small>6 months</small></div><span class="option-price">R1,500</span></label>
+            <label class="course-option"><input type="checkbox" value="puppy" onchange="updateCalculator()"><div class="option-info"><strong>Puppy Care Module</strong><small>6 weeks</small></div><span class="option-price">R750</span></label>
+            <label class="course-option"><input type="checkbox" value="grooming" onchange="updateCalculator()"><div class="option-info"><strong>Pet Grooming Diploma</strong><small>6 months</small></div><span class="option-price">R1,500</span></label>
+          </div>
+          <div class="info-box"><strong>Discount rules</strong><div class="hint-text">1 course: 0% &middot; 2 courses: 5% &middot; 3 courses: 10% &middot; 4+ courses: 15%</div></div>
+        </div>
+        <aside class="panel summary">
+          <h3>Quotation summary</h3>
+          <div id="selectedSummary"><div class="text-placeholder">No courses selected yet.</div></div>
+          <div class="summary-line"><span>Subtotal</span><strong id="subtotal">R0.00</strong></div>
+          <div class="summary-line"><span>Discount <span id="discountRate">0%</span></span><strong class="discount" id="discount">&minus; R0.00</strong></div>
+          <div class="summary-line"><span>VAT (15%)</span><strong id="vat">R0.00</strong></div>
+          <div class="summary-line total"><span>Estimated total</span><strong id="total">R0.00</strong></div>
+          <div class="notice">This is a quotation estimate, not a payment transaction. Your enquiry will be followed up by Sarah directly.</div>
+          <form class="quote-form" onsubmit="submitQuote(event)">
+            <div class="field"><label for="quoteName">Full name</label><input id="quoteName" required placeholder="Your name"></div>
+            <div class="field"><label for="quoteEmail">Email address</label><input id="quoteEmail" type="email" required placeholder="you@example.com"></div>
+            <button class="primary" type="submit">Request quotation</button>
+            <div id="quoteMessage" class="form-message">Quotation request captured successfully. The academy can now follow up with you.</div>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-grid"><div><strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>Caring, trustworthy pet care &amp; training.</small></div><div><small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small></div></div></footer>
+<div id="toast" class="toast"></div>
+<script src="../js/script.js"></script>
+</body>
+</html>

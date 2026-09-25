@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pawsitive Pet Academy — contact us.">
+<title>Pawsitive Pet Academy | Contact Us</title>
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="topbar"><div class="container"><span>&#128062; Caring, trustworthy pet care &amp; training</span><span>Durban, South Africa</span></div></div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Pawsitive Pet Academy home">
+      <span class="brand-mark"><svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 76c-19 0-31-11-31-25 0-12 10-19 20-16 4-11 18-11 22 0 11-3 20 4 20 16 0 14-12 25-31 25Z" fill="white"/><circle cx="30" cy="31" r="9" fill="white"/><circle cx="50" cy="22" r="9" fill="white"/><circle cx="70" cy="31" r="9" fill="white"/></svg></span>
+      <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html" class="active">Contact</a>
+      <a class="primary" href="feescalculator.html">Get a Quote</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div id="webMenu" class="mobile-menu">
+    <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a><a class="primary" href="feescalculator.html">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info"><span class="eyebrow">Contact</span><h2 class="mt-18">Let's talk about your pet.</h2><p>Have questions about a course or need help choosing a learning path? Send the academy a message.</p><div class="info-item"><strong>Academy location</strong><br>Durban, South Africa</div><div class="info-item"><strong>Enquiries</strong><br>Use the message form and the academy can follow up directly.</div></div>
+      <div class="panel"><h3>Send us a message</h3><p class="text-muted">Have questions about courses? Drop us a note.</p><form class="quote-form" onsubmit="submitContact(event)"><div class="field"><label>Full name</label><input required placeholder="Your name"></div><div class="field"><label>Email address</label><input type="email" required placeholder="you@example.com"></div><div class="field"><label>Your message</label><textarea required placeholder="Tell us how we can help..."></textarea></div><button class="primary" type="submit">Send message</button><div id="contactMessage" class="form-message">Thanks — your message has been captured for follow-up.</div></form></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-grid"><div><strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>Caring, trustworthy pet care &amp; training.</small></div><div><small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small></div></div></footer>
+<div id="toast" class="toast"></div>
+<script src="../js/script.js"></script>
+</body>
+</html>
