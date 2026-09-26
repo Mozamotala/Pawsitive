@@ -10,14 +10,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    enum class Screen(val className: String, val title: String) {
-        HOME("HomeFragment", "Home"),
-        ABOUT("AboutFragment", "About Us"),
-        COURSES("CoursesFragment", "Courses"),
-        COURSE_DETAIL("CourseDetailFragment", "Course Details"),
-        PRICING("PricingFragment", "Pricing"),
-        CALCULATOR("CalculatorFragment", "Fees Calculator"),
-        CONTACT("ContactFragment", "Contact Us")
+    enum class Screen {
+        HOME, ABOUT, COURSES, COURSE_DETAIL, PRICING, CALCULATOR, CONTACT
     }
 
     private lateinit var bottomNav: BottomNavigationView
@@ -71,11 +65,14 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun createFragment(screen: Screen): Fragment = try {
-        Class.forName("${MainActivity::class.java.`package`!!.name}.${screen.className}")
-            .getDeclaredConstructor()
-            .newInstance() as Fragment
-    } catch (e: ClassNotFoundException) {
-        MissingPageFragment.newInstance(screen.title)
+    // picks which page (fragment) to show for each screen
+    private fun createFragment(screen: Screen): Fragment = when (screen) {
+        Screen.HOME -> HomeFragment()
+        Screen.ABOUT -> AboutFragment()
+        Screen.COURSES -> CoursesFragment()
+        Screen.COURSE_DETAIL -> CourseDetailFragment()
+        Screen.PRICING -> PricingFragment()
+        Screen.CALCULATOR -> CalculatorFragment()
+        Screen.CONTACT -> ContactFragment()
     }
 }
