@@ -61,18 +61,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun openScreen(screen: Screen) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, createFragment(screen))
+            .replace(R.id.fragmentContainer, createPage(screen))
             .commit()
     }
 
-    // picks which page (fragment) to show for each screen
-    private fun createFragment(screen: Screen): Fragment = when (screen) {
-        Screen.HOME -> HomeFragment()
-        Screen.ABOUT -> AboutFragment()
-        Screen.COURSES -> CoursesFragment()
-        Screen.COURSE_DETAIL -> CourseDetailFragment()
-        Screen.PRICING -> PricingFragment()
-        Screen.CALCULATOR -> CalculatorFragment()
-        Screen.CONTACT -> ContactFragment()
+    // picks which page to show for each screen
+    private fun createPage(screen: Screen): Fragment = when (screen) {
+        Screen.HOME -> HomePage()
+        Screen.ABOUT -> AboutPage()
+        Screen.COURSES -> CoursesPage()
+        Screen.COURSE_DETAIL -> CourseDetailPage()
+        Screen.PRICING -> PricingPage()
+        Screen.CALCULATOR -> CalculatorPage()
+        Screen.CONTACT -> ContactPage()
     }
 }

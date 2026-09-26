@@ -13,7 +13,7 @@ import com.zentrix.pawsitiveacademy.model.PricingCalculator
 import com.zentrix.pawsitiveacademy.model.SelectionState
 import kotlin.math.roundToInt
 
-class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
+class CalculatorPage : Fragment(R.layout.page_calculator) {
 
     private lateinit var tvSubtotal: TextView
     private lateinit var tvDiscountLabel: TextView
@@ -64,7 +64,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         val result = PricingCalculator.calculate(selectedCourses)
         tvSubtotal.text = PricingCalculator.money(result.subtotal)
         tvDiscountLabel.text = "Discount ${(result.rate * 100).roundToInt()}%"
-        tvDiscount.text = "− ${PricingCalculator.money(result.discount)}"
+        tvDiscount.text = "-${PricingCalculator.money(result.discount)}"
         tvVat.text = PricingCalculator.money(result.vat)
         tvTotal.text = PricingCalculator.money(result.total)
     }

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 
-class PricingFragment : Fragment(R.layout.fragment_pricing) {
+class PricingPage : Fragment(R.layout.page_pricing) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

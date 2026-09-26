@@ -114,7 +114,7 @@
 
             <LinearLayout style="@style/SummaryRow">
                 <TextView android:id="@+id/tvDiscountLabel" style="@style/SummaryLabel" tools:text="Discount 0%" />
-                <TextView android:id="@+id/tvDiscount" style="@style/SummaryValue" android:textColor="#D9F0D5" tools:text="− R0.00" />
+                <TextView android:id="@+id/tvDiscount" style="@style/SummaryValue" android:textColor="#D9F0D5" tools:text="-R0.00" />
             </LinearLayout>
 
             <LinearLayout style="@style/SummaryRow">

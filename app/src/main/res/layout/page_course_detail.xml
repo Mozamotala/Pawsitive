@@ -15,7 +15,7 @@
             android:id="@+id/btnBackToCourses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="← Back to Courses"
+            android:text="Back to Courses"
             android:textColor="@color/brown"
             android:textStyle="bold"
             android:padding="4dp"
@@ -46,6 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tvDetailType"
                 android:layout_marginTop="14dp"
                 android:text="SIX-MONTH PROGRAMME"
                 android:textColor="@color/brown"
@@ -58,6 +59,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tvDetailName"
                 android:layout_marginTop="12dp"
                 android:text="Canine Obedience Training"
                 android:textColor="@color/brown"
@@ -67,6 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tvDetailDuration"
                 android:layout_marginTop="4dp"
                 android:text="Duration: 6 months"
                 android:textColor="@color/muted"
@@ -75,21 +78,32 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tvDetailPrice"
                 android:text="R1,500"
                 android:textColor="@color/tan"
                 android:textStyle="bold"
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/tvDetailPurpose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Build practical obedience skills and a stronger communication routine with your dog. This programme covers lead work, recall, impulse control and everyday household manners, guided by hands-on instruction and clear progress milestones."
                 android:textColor="@color/ink" />
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="✓  Weekly hands-on sessions with a qualified trainer." android:textColor="@color/ink" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="✓  Covers lead walking, recall, sit/stay and impulse control." android:textColor="@color/ink" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="✓  Progress check-ins so owners can track improvement." android:textColor="@color/ink" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="What you will learn"
+                android:textColor="@color/brown"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/contentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
             <Button
                 android:id="@+id/btnSelectDetailCourse"

@@ -10,7 +10,7 @@ import com.zentrix.pawsitiveacademy.model.CourseCatalog
 import com.zentrix.pawsitiveacademy.model.PricingCalculator
 import com.zentrix.pawsitiveacademy.model.SelectionState
 
-class CoursesFragment : Fragment(R.layout.fragment_courses) {
+class CoursesPage : Fragment(R.layout.page_courses) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,17 +30,10 @@ class CoursesFragment : Fragment(R.layout.fragment_courses) {
             item.findViewById<TextView>(R.id.tvCoursePrice).text = PricingCalculator.money(course.price)
 
             val selectButton = item.findViewById<android.widget.Button>(R.id.btnSelectCourse)
-            if (course.key == "obedience") {
-                selectButton.text = "View details"
-                selectButton.setOnClickListener {
-                    (activity as? MainActivity)?.showScreen(MainActivity.Screen.COURSE_DETAIL)
-                }
-            } else {
-                selectButton.text = "Select this course"
-                selectButton.setOnClickListener {
-                    SelectionState.selectedKeys.add(course.key)
-                    (activity as? MainActivity)?.showScreen(MainActivity.Screen.CALCULATOR)
-                }
+            selectButton.text = "View details"
+            selectButton.setOnClickListener {
+                SelectionState.detailKey = course.key
+                (activity as? MainActivity)?.showScreen(MainActivity.Screen.COURSE_DETAIL)
             }
 
             container.addView(item)

@@ -9,11 +9,11 @@ A native Android app for **Pawsitive Pet Academy**, a pet care and training acad
 
 ## Features
 
-- **Course catalogue** — Browse all seven courses (four six-month programmes and three six-week short courses) with duration and fees.
-- **Fees calculator** — Select courses and see the subtotal, multi-course discount, VAT (15%), and estimated total.
-- **Quotation requests** — Request a quote for the selected courses from the fees calculator.
-- **Contact form** — Submit a general enquiry to the academy.
-- **Native navigation** — Bottom tab bar (Home / Courses / Fees / Contact), with About Us and Pricing in the top menu.
+- **Course catalogue**: Browse all seven courses (four six-month programmes and three six-week short courses) with duration and fees.
+- **Fees calculator**: Select courses and see the subtotal, multi-course discount, VAT (15%), and estimated total.
+- **Quotation requests**: Request a quote for the selected courses from the fees calculator.
+- **Contact form**: Submit a general enquiry to the academy.
+- **Native navigation**: Bottom tab bar (Home / Courses / Fees / Contact), with About Us and Pricing in the top menu.
 
 ---
 
@@ -44,8 +44,8 @@ git clone https://github.com/EMGPSD/xhaw5112-2026-mobile-app-st10510475.git
 cd xhaw5112-2026-mobile-app-st10510475
 ```
 
-1. Open the cloned `xhaw5112-2026-mobile-app-st10510475` folder in Android Studio (**File → Open**).
-2. Let Gradle sync — Android Studio will offer to generate the Gradle wrapper automatically if it isn't present; accept the prompt.
+1. Open the cloned `xhaw5112-2026-mobile-app-st10510475` folder in Android Studio (**File > Open**).
+2. Let Gradle sync. Android Studio will offer to generate the Gradle wrapper automatically if it isn't present; accept the prompt.
 3. Run the app on an emulator or connected device with the green **Run ▶** button.
 
 ---
@@ -56,7 +56,7 @@ cd xhaw5112-2026-mobile-app-st10510475
 app/src/main/
 ├── java/com/zentrix/pawsitiveacademy/
 │   ├── MainActivity.kt          # Hosts the screens, bottom nav and top menu
-│   ├── *Fragment.kt             # One Kotlin fragment per screen
+│   ├── *Page.kt                 # One Kotlin page (fragment) per screen
 │   └── model/Course.kt          # Course list, discount and VAT calculation
 └── res/
     ├── layout/                  # XML layout for each screen
@@ -73,7 +73,7 @@ app/src/main/
 | App name | `app/src/main/res/values/strings.xml` |
 | Package / application ID | `app/build.gradle` (`applicationId`) |
 | Colors / theme | `app/src/main/res/values/colors.xml`, `themes.xml` |
-| App icon | `res/drawable/ic_launcher_*.xml`, or **File → New → Image Asset** |
+| App icon | `res/drawable/ic_launcher_*.xml`, or **File > New > Image Asset** |
 | Courses, pricing, discount and VAT | `app/src/main/java/com/zentrix/pawsitiveacademy/model/Course.kt` |
 | Screen layouts | `app/src/main/res/layout/` |
 
@@ -81,7 +81,7 @@ app/src/main/
 
 ## Building a Release
 
-Use **Build → Generate Signed Bundle / APK** in Android Studio to produce a signed `.aab` (for the Play Store) or `.apk`, creating or reusing a signing key when prompted.
+Use **Build > Generate Signed Bundle / APK** in Android Studio to produce a signed `.aab` (for the Play Store) or `.apk`, creating or reusing a signing key when prompted.
 
 ---
 
@@ -96,4 +96,4 @@ Use **Build → Generate Signed Bundle / APK** in Android Studio to produce a si
 
 ## Contact
 
-For questions about the academy itself, contact **Sarah Smith** — Pawsitive Pet Academy, Durban, South Africa.
+For questions about the academy itself, contact **Sarah Smith**: Pawsitive Pet Academy, Durban, South Africa.

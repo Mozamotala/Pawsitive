@@ -2,4 +2,4 @@ package com.zentrix.pawsitiveacademy
 
 import androidx.fragment.app.Fragment
 
-class AboutFragment : Fragment(R.layout.fragment_about)
+class AboutPage : Fragment(R.layout.page_about)
