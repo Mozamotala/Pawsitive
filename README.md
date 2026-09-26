@@ -1,71 +1,115 @@
-# Pawsitive Pet Academy — Android app
+# 🐾 Pawsitive Pet Academy
 
-Native Android app (Kotlin, no WebView) for the Pawsitive Pet Academy
-XHAW5112 site. Each screen is a Fragment swapped into a single
-container behind a bottom navigation bar (Home, Courses, Fees, Contact)
-plus overflow menu items (About Us, Pricing), matching the group website's
-page structure.
+A native Android app for **Pawsitive Pet Academy**, a pet care and training academy based in Durban, South Africa. The app wraps the academy's course catalogue, transparent fees calculator, and enquiry forms in a mobile-friendly experience built on top of the existing web platform.
 
-## Screens
+**Owner:** Sarah Smith
+**Location:** Durban, South Africa
 
-| Screen | Fragment | Layout |
-|---|---|---|
-| Home | `HomeFragment.kt` | `fragment_home.xml` |
-| About Us | `AboutFragment.kt` | `fragment_about.xml` |
-| Courses | `CoursesFragment.kt` | `fragment_courses.xml` |
-| Course Details | `CourseDetailFragment.kt` | `fragment_course_detail.xml` |
-| Pricing | `PricingFragment.kt` | `fragment_pricing.xml` |
-| Fees Calculator | `CalculatorFragment.kt` | `fragment_calculator.xml` |
-| Contact Us | `ContactFragment.kt` | `fragment_contact.xml` |
+---
 
-Shared course data and pricing logic live in
-`app/src/main/java/.../model/Course.kt`.
+## Features
 
-## How to open it
+- **Course catalogue** — Six-month courses (Canine Obedience Training, Pet Grooming Diploma) and a six-week Puppy Care Module, each with duration and fees.
+- **Fees calculator** — Select any combination of courses and see the subtotal, multi-course discount (5% / 10% / 15%), VAT (15%), and estimated total update instantly.
+- **Quotation requests** — Submit a name and email to request a formal quote based on the selected courses.
+- **Contact form** — Send a general enquiry directly to the academy.
+- **Offline-first** — The app runs entirely on-device; no internet connection is required to browse courses or use the calculator.
+- **Native navigation** — Bottom tab bar (Home / Courses / Fees / Contact) and standard Android back-button behaviour.
 
-1. Open Android Studio → **File > Open** → select this project folder.
-2. Let Gradle sync (first sync needs internet to fetch dependencies).
-3. Press the green **Run ▶** button with an emulator or a physical device
-   connected.
+---
+
+## Screenshots
+
+| Home | Courses | Fees Calculator | Contact |
+|---|---|---|---|
+| _add screenshot_ | _add screenshot_ | _add screenshot_ | _add screenshot_ |
+
+> Replace the placeholders above with actual screenshots before publishing.
+
+---
+
+## Tech Stack
+
+| Component | Details |
+|---|---|
+| Language | Kotlin |
+| Min SDK | 24 (Android 7.0 Nougat) |
+| Target SDK | 34 |
+| UI | WebView-based shell over an embedded HTML/CSS/JS front end, with AndroidX AppCompat / Material Components and SwipeRefreshLayout for pull-to-refresh |
+| Build system | Gradle (Groovy DSL) |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Android Studio](https://developer.android.com/studio) (latest stable)
+- JDK 17
+- An Android emulator or a physical device running Android 7.0+
+
+### Setup
+
+```bash
+git clone https://github.com/<your-username>/pawsitive-pet-academy-app.git
+cd pawsitive-pet-academy-app
+```
+
+1. Open the project folder in Android Studio (**File → Open**).
+2. Let Gradle sync — Android Studio will offer to generate the Gradle wrapper automatically if it isn't present; accept the prompt.
+3. Run the app on an emulator or connected device with the green **Run ▶** button.
+
+---
+
+## Project Structure
+
+```
+app/src/main/
+├── assets/
+│   └── index.html           # Course info, calculator logic, and forms (HTML/CSS/JS)
+├── java/.../MainActivity.kt # WebView host: JS/DOM storage, pull-to-refresh, back navigation
+└── res/
+    ├── layout/              # WebView + SwipeRefreshLayout screen
+    ├── values/              # App name, colors, theme
+    └── mipmap-anydpi-v26/   # Adaptive app icon
+```
+
+---
 
 ## Customizing
 
-- **App name**: `app/src/main/res/values/strings.xml`
-- **Package/application ID**: `com.zentrix.pawsitiveacademy`, set in
-  `app/build.gradle` (`applicationId`).
-- **Brand colors**: `app/src/main/res/values/colors.xml`.
-- **Course data / pricing rules**: `app/src/main/java/.../model/Course.kt`.
+| What | Where |
+|---|---|
+| App name | `app/src/main/res/values/strings.xml` |
+| Package / application ID | `app/build.gradle` (`applicationId`) |
+| Colors / theme | `app/src/main/res/values/colors.xml`, `themes.xml` |
+| App icon | `res/drawable/ic_launcher_*.xml`, or **File → New → Image Asset** |
+| Courses, pricing, copy | `app/src/main/assets/index.html` |
+| Point at a live server instead of the bundled file | `LOCAL_URL` in `MainActivity.kt` |
 
-## Icons
+---
 
-All icons are Android vector drawables in `app/src/main/res/drawable/`,
-filled black and tinted at runtime by `res/color/nav_item_color.xml`
-(brown when selected, muted grey otherwise).
+## Building a Release
 
-| Icon | File | Used for |
-|---|---|---|
-| House | `ic_home.xml` | Home tab |
-| Paw | `ic_courses.xml` | Courses tab |
-| Money | `ic_fees.xml` | Fees tab |
-| Envelope | `ic_contact.xml` | Contact tab |
-| Info | `ic_about.xml` | About Us menu item |
-| Price tag | `ic_pricing.xml` | Pricing menu item |
-| Paw (white) | `ic_launcher_foreground.xml` | App launcher icon |
+Use **Build → Generate Signed Bundle / APK** in Android Studio to produce a signed `.aab` (for the Play Store) or `.apk`, creating or reusing a signing key when prompted.
 
-The launcher icon is an adaptive icon (`mipmap-anydpi-v26/ic_launcher.xml`
-and `ic_launcher_round.xml`), with the white paw on the brown
-`ic_launcher_background.xml`. Both variants share the same foreground,
-so changing `ic_launcher_foreground.xml` updates both.
+---
 
-### Icon credits
+## Roadmap
 
-| Icon | Source | Author | License |
-|---|---|---|---|
-| Home 389 | [SVG Repo](https://www.svgrepo.com/svg/535437/home) | Noah Jacobus | Public Domain |
-| Paw 3 | [SVG Repo](https://www.svgrepo.com/svg/479104/paw-3) | Icooon Mono | Public Domain |
-| Money 584 | [SVG Repo](https://www.svgrepo.com/svg/500409/money) | Tienda Nube | MIT |
+- [ ] Push notifications for quote follow-ups
+- [ ] In-app booking / scheduling
+- [ ] Payment integration
+- [ ] Play Store release
 
-## Building a signed APK / AAB for the Play Store
+---
 
-Use **Build > Generate Signed Bundle / APK** in Android Studio once you're
-ready to distribute it.
+## License
+
+Add your chosen license here (e.g. MIT) — see [choosealicense.com](https://choosealicense.com/) if you're unsure which one fits.
+
+---
+
+## Contact
+
+For questions about the academy itself, contact **Sarah Smith** — Pawsitive Pet Academy, Durban, South Africa.
