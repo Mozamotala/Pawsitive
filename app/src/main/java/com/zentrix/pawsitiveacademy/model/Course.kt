@@ -12,10 +12,10 @@ data class Course(
 object CourseCatalog {
     val all = listOf(
         Course("obedience", "Canine Obedience Training", "6 months", 1500.0),
-        Course("grooming", "Pet Grooming Diploma", "6 months", 1500.0),
+        Course("grooming", "Pet Grooming", "6 months", 1500.0),
         Course("behaviour", "Animal Behaviour", "6 months", 1500.0),
         Course("business", "Pet Business Management", "6 months", 1500.0),
-        Course("puppy", "Puppy Care Module", "6 weeks", 750.0),
+        Course("puppy", "Puppy Care", "6 weeks", 750.0),
         Course("firstaid", "Pet First Aid", "6 weeks", 750.0),
         Course("walking", "Basic Dog Walking", "6 weeks", 750.0)
     )

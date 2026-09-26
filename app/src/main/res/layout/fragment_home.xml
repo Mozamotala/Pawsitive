@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROFESSIONAL • CARING • PRACTICAL"
+                android:text="PET CARE AND TRAINING"
                 android:textColor="@color/brown"
                 android:textStyle="bold"
                 android:textSize="11sp"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="Helping pets and their people thrive."
+                android:text="Welcome to Pawsitive Pet Academy."
                 android:textColor="@color/brown"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Welcome to Pawsitive Pet Academy — a friendly, professional academy designed to help pet owners build better routines, stronger relationships and confident, well-cared-for companions."
+                android:text="We teach pet owners and pet care workers how to look after and train their pets. Based in Durban since 2023."
                 android:textColor="@color/muted"
                 android:textSize="14sp" />
 
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="4dp"
-            android:text="Explore our pathways."
+            android:text="Our courses."
             android:textColor="@color/brown"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -116,7 +116,7 @@
             android:clickable="true"
             android:focusable="true">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Six-Month Programmes" android:textColor="@color/brown" android:textStyle="bold" android:textSize="16sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="In-depth obedience and grooming training." android:textColor="@color/muted" android:layout_marginTop="4dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Four courses: obedience, grooming, behaviour and pet business." android:textColor="@color/muted" android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -129,8 +129,8 @@
             android:padding="16dp"
             android:clickable="true"
             android:focusable="true">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Six-Week Course" android:textColor="@color/brown" android:textStyle="bold" android:textSize="16sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="A focused foundation in puppy care." android:textColor="@color/muted" android:layout_marginTop="4dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Six-Week Courses" android:textColor="@color/brown" android:textStyle="bold" android:textSize="16sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Three courses: puppy care, first aid and dog walking." android:textColor="@color/muted" android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,7 +144,7 @@
             android:clickable="true"
             android:focusable="true">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fees Calculator" android:textColor="@color/brown" android:textStyle="bold" android:textSize="16sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="See your discount and total instantly." android:textColor="@color/muted" android:layout_marginTop="4dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Work out your total and discount." android:textColor="@color/muted" android:layout_marginTop="4dp" />
         </LinearLayout>
 
     </LinearLayout>
