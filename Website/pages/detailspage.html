@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
+<!-- Course details page: what this one course costs and covers -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Pawsitive Pet Academy: Canine Obedience Training course details.">
+<meta name="description" content="Canine Obedience Training course at Pawsitive Pet Academy.">
 <title>Pawsitive Pet Academy | Canine Obedience Training</title>
+<!-- Tab icon and the shared stylesheet used by every page -->
 <link rel="icon" href="../assets/logo-badge.png">
 <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
-<div class="topbar"><div class="container"><span>&#128062; Caring, trustworthy pet care &amp; training</span><span>Durban, South Africa</span></div></div>
+<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<div class="topbar">
+  <div class="container">
+    <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
+  </div>
+</div>
 <header>
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Pawsitive Pet Academy home">
@@ -18,44 +25,71 @@
       <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
     </a>
     <nav>
-      <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html" class="active">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="summarypage.html" class="active">Courses</a>
+      <a href="feescalculator.html">Pricing</a>
+      <a href="contactus.html">Contact</a>
       <a class="primary" href="feescalculator.html">Get a Quote</a>
     </nav>
     <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
   </div>
+  <!-- Mobile menu: shown on small screens when the menu button is tapped.
+       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
   <div id="webMenu" class="mobile-menu">
-    <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a><a class="primary" href="feescalculator.html">Get a Quote</a>
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="summarypage.html">Courses</a>
+    <a href="feescalculator.html">Pricing</a>
+    <a href="contactus.html">Contact</a>
+    <a class="primary" href="feescalculator.html">Get a Quote</a>
   </div>
 </header>
 
 <main>
   <section>
     <div class="container container-narrow">
-      <a class="back-link" href="summarypage.html">Back to Courses</a>
+      <!-- Link back to the full course list -->
+      <a class="back-link" href="summarypage.html">&larr; Back to all courses</a>
+      <!-- Course card: length, price and what the course covers -->
       <div class="course-card">
-        <div class="course-image large"><img class="course-icon" src="../assets/icons/paw.svg" alt="" width="110" height="110"></div>
+        <div class="course-image large">
+          <img class="course-icon" src="../assets/icons/paw.svg" alt="" width="110" height="110">
+        </div>
         <div class="course-body">
-          <span class="eyebrow">Six-Month Programme</span>
+          <span class="eyebrow">Six-month programme</span>
           <h2 class="mt-15">Canine Obedience Training</h2>
           <div class="meta">Duration: 6 months</div>
-          <div class="price">R1,500</div>
-          <p><strong>Purpose:</strong> To teach effective dog obedience and behavioural training techniques.</p>
-          <h3>What you will learn</h3>
+          <div class="price">R1 500</div>
+          <p><strong>About this course:</strong> You'll learn how to train dogs to follow commands and how to deal with bad behaviour.</p>
+          <h3>What's covered</h3>
           <ul class="checks">
             <li>Basic commands</li>
-            <li>Leash training</li>
-            <li>Behaviour correction</li>
+            <li>Lead training</li>
+            <li>Correcting bad behaviour</li>
             <li>Positive reinforcement</li>
-            <li>Socialisation techniques</li>
+            <li>Socialisation</li>
           </ul>
-          <a class="primary mt-20" href="feescalculator.html#obedience">Select this course</a>
+          <!-- "#obedience" matches this course's checkbox value on the Pricing page, so script.js can tick it for the visitor -->
+          <a class="primary mt-20" href="feescalculator.html#obedience">Add to my quote</a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer><div class="container footer-grid"><div><strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>Caring, trustworthy pet care &amp; training.</small></div><div><small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small></div></div></footer>
+<!-- Footer: academy name, address and copyright, the same on every page -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>12 Florida Road, Morningside, Durban</small>
+    </div>
+    <div>
+      <small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
 <div id="toast" class="toast"></div>
 <script src="../js/script.js"></script>
 </body>

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
+<!-- Pricing page: discount rules, the fees calculator and the quote request form -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Pawsitive Pet Academy: fees calculator and pricing.">
+<meta name="description" content="Pawsitive Pet Academy course prices, discounts and fees calculator.">
 <title>Pawsitive Pet Academy | Pricing</title>
+<!-- Tab icon and the shared stylesheet used by every page -->
 <link rel="icon" href="../assets/logo-badge.png">
 <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
-<div class="topbar"><div class="container"><span>&#128062; Caring, trustworthy pet care &amp; training</span><span>Durban, South Africa</span></div></div>
+<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<div class="topbar">
+  <div class="container">
+    <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
+  </div>
+</div>
 <header>
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Pawsitive Pet Academy home">
@@ -18,58 +25,156 @@
       <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
     </a>
     <nav>
-      <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html" class="active">Pricing</a><a href="contactus.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="summarypage.html">Courses</a>
+      <a href="feescalculator.html" class="active">Pricing</a>
+      <a href="contactus.html">Contact</a>
       <a class="primary" href="feescalculator.html">Get a Quote</a>
     </nav>
     <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
   </div>
+  <!-- Mobile menu: shown on small screens when the menu button is tapped.
+       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
   <div id="webMenu" class="mobile-menu">
-    <a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="summarypage.html">Courses</a><a href="feescalculator.html">Pricing</a><a href="contactus.html">Contact</a><a class="primary" href="feescalculator.html">Get a Quote</a>
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="summarypage.html">Courses</a>
+    <a href="feescalculator.html">Pricing</a>
+    <a href="contactus.html">Contact</a>
+    <a class="primary" href="feescalculator.html">Get a Quote</a>
   </div>
 </header>
 
 <main>
+  <!-- Discount rules: the more courses, the bigger the discount -->
   <section>
     <div class="container">
-      <div class="section-head"><span class="eyebrow">Pricing</span><h2>Multi-course discounts.</h2><p>Pick more than one course and save.</p></div>
+      <div class="section-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>Discounts</h2>
+        <p>The more courses you sign up for, the more you save.</p>
+      </div>
       <div class="pricing-grid">
-        <div class="price-rule"><span class="meta">2 courses</span><strong>5%</strong><p>Take two courses and save 5%.</p></div>
-        <div class="price-rule"><span class="meta">3 courses</span><strong>10%</strong><p>Take three courses and save 10%.</p></div>
-        <div class="price-rule"><span class="meta">4+ courses</span><strong>15%</strong><p>Take four or more courses and save 15%.</p></div>
+        <div class="price-rule">
+          <span class="meta">2 courses</span><strong>5%</strong>
+          <p>Sign up for two courses and get 5% off.</p>
+        </div>
+        <div class="price-rule">
+          <span class="meta">3 courses</span><strong>10%</strong>
+          <p>Sign up for three courses and get 10% off.</p>
+        </div>
+        <div class="price-rule">
+          <span class="meta">4+ courses</span><strong>15%</strong>
+          <p>Sign up for four or more and get 15% off.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Fees calculator: tick courses on the left, see the quote on the right -->
   <section class="bg-cream">
     <div class="container">
-      <div class="section-head"><span class="eyebrow">Fees Calculator</span><h2>Get a quote.</h2><p>Tick the courses you want to see your discount, VAT and total.</p></div>
+      <div class="section-head">
+        <span class="eyebrow">Fees calculator</span>
+        <h2>Work out your fees</h2>
+        <p>Tick the courses you're interested in. The total updates as you go and includes 15% VAT.</p>
+      </div>
       <div class="calculator-wrap">
         <div class="panel">
-          <h3>Select courses</h3>
+          <h3>Choose your courses</h3>
+          <!-- Each checkbox value is the course's short name. It must match the course list in script.js
+               and the "#name" links on the course details pages. -->
           <div id="courseOptions">
-            <label class="course-option"><input type="checkbox" value="obedience" onchange="updateCalculator()"><div class="option-info"><strong>Canine Obedience Training</strong><small>6 months</small></div><span class="option-price">R1,500</span></label>
-            <label class="course-option"><input type="checkbox" value="grooming" onchange="updateCalculator()"><div class="option-info"><strong>Pet Grooming</strong><small>6 months</small></div><span class="option-price">R1,500</span></label>
-            <label class="course-option"><input type="checkbox" value="behaviour" onchange="updateCalculator()"><div class="option-info"><strong>Animal Behaviour</strong><small>6 months</small></div><span class="option-price">R1,500</span></label>
-            <label class="course-option"><input type="checkbox" value="business" onchange="updateCalculator()"><div class="option-info"><strong>Pet Business Management</strong><small>6 months</small></div><span class="option-price">R1,500</span></label>
-            <label class="course-option"><input type="checkbox" value="puppy" onchange="updateCalculator()"><div class="option-info"><strong>Puppy Care</strong><small>6 weeks</small></div><span class="option-price">R750</span></label>
-            <label class="course-option"><input type="checkbox" value="firstaid" onchange="updateCalculator()"><div class="option-info"><strong>Pet First Aid</strong><small>6 weeks</small></div><span class="option-price">R750</span></label>
-            <label class="course-option"><input type="checkbox" value="walking" onchange="updateCalculator()"><div class="option-info"><strong>Basic Dog Walking</strong><small>6 weeks</small></div><span class="option-price">R750</span></label>
+            <label class="course-option">
+              <input type="checkbox" value="obedience" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Canine Obedience Training</strong><small>6 months</small>
+              </div>
+              <span class="option-price">R1 500</span>
+            </label>
+            <label class="course-option">
+              <input type="checkbox" value="grooming" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Pet Grooming</strong><small>6 months</small>
+              </div>
+              <span class="option-price">R1 500</span>
+            </label>
+            <label class="course-option">
+              <input type="checkbox" value="behaviour" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Animal Behaviour</strong><small>6 months</small>
+              </div>
+              <span class="option-price">R1 500</span>
+            </label>
+            <label class="course-option">
+              <input type="checkbox" value="business" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Pet Business Management</strong><small>6 months</small>
+              </div>
+              <span class="option-price">R1 500</span>
+            </label>
+            <label class="course-option">
+              <input type="checkbox" value="puppy" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Puppy Care</strong><small>6 weeks</small>
+              </div>
+              <span class="option-price">R750</span>
+            </label>
+            <label class="course-option">
+              <input type="checkbox" value="firstaid" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Pet First Aid</strong><small>6 weeks</small>
+              </div>
+              <span class="option-price">R750</span>
+            </label>
+            <label class="course-option">
+              <input type="checkbox" value="walking" onchange="updateCalculator()">
+              <div class="option-info">
+                <strong>Basic Dog Walking</strong><small>6 weeks</small>
+              </div>
+              <span class="option-price">R750</span>
+            </label>
           </div>
-          <div class="info-box"><strong>Discount rules</strong><div class="hint-text">1 course: 0%, 2 courses: 5%, 3 courses: 10%, 4 or more courses: 15%</div></div>
+          <div class="info-box">
+            <strong>How the discount works</strong>
+            <div class="hint-text">1 course: no discount, 2 courses: 5%, 3 courses: 10%, 4 or more: 15%</div>
+          </div>
         </div>
+
+        <!-- Quote summary: subtotal, discount, 15% VAT and total.
+             updateCalculator() in script.js fills these in; without it they stay at R0.00. -->
         <aside class="panel summary">
-          <h3>Quotation summary</h3>
-          <div id="selectedSummary"><div class="text-placeholder">No courses selected yet.</div></div>
-          <div class="summary-line"><span>Subtotal</span><strong id="subtotal">R0.00</strong></div>
-          <div class="summary-line"><span>Discount <span id="discountRate">0%</span></span><strong class="discount" id="discount">-R0.00</strong></div>
-          <div class="summary-line"><span>VAT (15%)</span><strong id="vat">R0.00</strong></div>
-          <div class="summary-line total"><span>Estimated total</span><strong id="total">R0.00</strong></div>
-          <div class="notice">This is an estimate only. Sarah will contact you with your quote.</div>
+          <h3>Your quote</h3>
+          <div id="selectedSummary">
+            <div class="text-placeholder">You haven't picked any courses yet.</div>
+          </div>
+          <div class="summary-line">
+            <span>Subtotal</span><strong id="subtotal">R0.00</strong>
+          </div>
+          <div class="summary-line">
+            <span>Discount <span id="discountRate">0%</span></span><strong class="discount" id="discount">-R0.00</strong>
+          </div>
+          <div class="summary-line">
+            <span>VAT (15%)</span><strong id="vat">R0.00</strong>
+          </div>
+          <div class="summary-line total">
+            <span>Estimated total</span><strong id="total">R0.00</strong>
+          </div>
+          <div class="notice">This is only an estimate. Sarah will email you an official quote.</div>
+
+          <!-- Quote request form: sent by submitQuote() in script.js (not part of this HTML-only version) -->
           <form class="quote-form" onsubmit="submitQuote(event)">
-            <div class="field"><label for="quoteName">Full name</label><input id="quoteName" required placeholder="Your name"></div>
-            <div class="field"><label for="quoteEmail">Email address</label><input id="quoteEmail" type="email" required placeholder="you@example.com"></div>
-            <button class="primary" type="submit">Request quotation</button>
-            <div id="quoteMessage" class="form-message">Thanks, we have your request and will be in touch.</div>
+            <div class="field">
+              <label for="quoteName">Full name</label>
+              <input id="quoteName" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="quoteEmail">Email address</label>
+              <input id="quoteEmail" type="email" required placeholder="you@example.com">
+            </div>
+            <button class="primary" type="submit">Request my quote</button>
+            <div id="quoteMessage" class="form-message">Thanks! We've got your request and will be in touch soon.</div>
           </form>
         </aside>
       </div>
@@ -77,7 +182,18 @@
   </section>
 </main>
 
-<footer><div class="container footer-grid"><div><strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>Caring, trustworthy pet care &amp; training.</small></div><div><small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small></div></div></footer>
+<!-- Footer: academy name, address and copyright, the same on every page -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>12 Florida Road, Morningside, Durban</small>
+    </div>
+    <div>
+      <small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
 <div id="toast" class="toast"></div>
 <script src="../js/script.js"></script>
 </body>
