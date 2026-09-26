@@ -1,6 +1,6 @@
 # 🐾 Pawsitive Pet Academy
 
-A native Android app for **Pawsitive Pet Academy**, a pet care and training academy based in Durban, South Africa. The app wraps the academy's course catalogue, transparent fees calculator, and enquiry forms in a mobile-friendly experience built on top of the existing web platform.
+A native Android app for **Pawsitive Pet Academy**, a pet care and training academy based in Durban, South Africa. The app provides a course catalogue, a fees calculator, and enquiry forms in a mobile-friendly experience.
 
 **Owner:** Sarah Smith
 **Location:** Durban, South Africa
@@ -9,22 +9,11 @@ A native Android app for **Pawsitive Pet Academy**, a pet care and training acad
 
 ## Features
 
-- **Course catalogue** — Six-month courses (Canine Obedience Training, Pet Grooming Diploma) and a six-week Puppy Care Module, each with duration and fees.
-- **Fees calculator** — Select any combination of courses and see the subtotal, multi-course discount (5% / 10% / 15%), VAT (15%), and estimated total update instantly.
-- **Quotation requests** — Submit a name and email to request a formal quote based on the selected courses.
-- **Contact form** — Send a general enquiry directly to the academy.
-- **Offline-first** — The app runs entirely on-device; no internet connection is required to browse courses or use the calculator.
-- **Native navigation** — Bottom tab bar (Home / Courses / Fees / Contact) and standard Android back-button behaviour.
-
----
-
-## Screenshots
-
-| Home | Courses | Fees Calculator | Contact |
-|---|---|---|---|
-| _add screenshot_ | _add screenshot_ | _add screenshot_ | _add screenshot_ |
-
-> Replace the placeholders above with actual screenshots before publishing.
+- **Course catalogue** — Browse all seven courses (four six-month programmes and three six-week short courses) with duration and fees.
+- **Fees calculator** — Select courses and see the subtotal, multi-course discount, VAT (15%), and estimated total.
+- **Quotation requests** — Request a quote for the selected courses from the fees calculator.
+- **Contact form** — Submit a general enquiry to the academy.
+- **Native navigation** — Bottom tab bar (Home / Courses / Fees / Contact), with About Us and Pricing in the top menu.
 
 ---
 
@@ -35,7 +24,7 @@ A native Android app for **Pawsitive Pet Academy**, a pet care and training acad
 | Language | Kotlin |
 | Min SDK | 24 (Android 7.0 Nougat) |
 | Target SDK | 34 |
-| UI | WebView-based shell over an embedded HTML/CSS/JS front end, with AndroidX AppCompat / Material Components and SwipeRefreshLayout for pull-to-refresh |
+| UI | Single activity with a Kotlin fragment and XML layout per screen, using AndroidX AppCompat / Material Components |
 | Build system | Gradle (Groovy DSL) |
 
 ---
@@ -51,11 +40,11 @@ A native Android app for **Pawsitive Pet Academy**, a pet care and training acad
 ### Setup
 
 ```bash
-git clone https://github.com/<your-username>/pawsitive-pet-academy-app.git
-cd pawsitive-pet-academy-app
+git clone https://github.com/EMGPSD/xhaw5112-2026-mobile-app-st10510475.git
+cd xhaw5112-2026-mobile-app-st10510475
 ```
 
-1. Open the project folder in Android Studio (**File → Open**).
+1. Open the cloned `xhaw5112-2026-mobile-app-st10510475` folder in Android Studio (**File → Open**).
 2. Let Gradle sync — Android Studio will offer to generate the Gradle wrapper automatically if it isn't present; accept the prompt.
 3. Run the app on an emulator or connected device with the green **Run ▶** button.
 
@@ -65,13 +54,14 @@ cd pawsitive-pet-academy-app
 
 ```
 app/src/main/
-├── assets/
-│   └── index.html           # Course info, calculator logic, and forms (HTML/CSS/JS)
-├── java/.../MainActivity.kt # WebView host: JS/DOM storage, pull-to-refresh, back navigation
+├── java/com/zentrix/pawsitiveacademy/
+│   ├── MainActivity.kt          # Hosts the screens, bottom nav and top menu
+│   ├── *Fragment.kt             # One Kotlin fragment per screen
+│   └── model/Course.kt          # Course list, discount and VAT calculation
 └── res/
-    ├── layout/              # WebView + SwipeRefreshLayout screen
-    ├── values/              # App name, colors, theme
-    └── mipmap-anydpi-v26/   # Adaptive app icon
+    ├── layout/                  # XML layout for each screen
+    ├── values/                  # App name, colors, theme
+    └── mipmap-anydpi-v26/       # Adaptive app icon
 ```
 
 ---
@@ -84,8 +74,8 @@ app/src/main/
 | Package / application ID | `app/build.gradle` (`applicationId`) |
 | Colors / theme | `app/src/main/res/values/colors.xml`, `themes.xml` |
 | App icon | `res/drawable/ic_launcher_*.xml`, or **File → New → Image Asset** |
-| Courses, pricing, copy | `app/src/main/assets/index.html` |
-| Point at a live server instead of the bundled file | `LOCAL_URL` in `MainActivity.kt` |
+| Courses, pricing, discount and VAT | `app/src/main/java/com/zentrix/pawsitiveacademy/model/Course.kt` |
+| Screen layouts | `app/src/main/res/layout/` |
 
 ---
 
@@ -101,12 +91,6 @@ Use **Build → Generate Signed Bundle / APK** in Android Studio to produce a si
 - [ ] In-app booking / scheduling
 - [ ] Payment integration
 - [ ] Play Store release
-
----
-
-## License
-
-Add your chosen license here (e.g. MIT) — see [choosealicense.com](https://choosealicense.com/) if you're unsure which one fits.
 
 ---
 
