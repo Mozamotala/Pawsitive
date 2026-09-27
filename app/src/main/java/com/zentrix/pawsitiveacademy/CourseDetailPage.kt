@@ -10,12 +10,13 @@ import com.zentrix.pawsitiveacademy.model.CourseCatalog
 import com.zentrix.pawsitiveacademy.model.PricingCalculator
 import com.zentrix.pawsitiveacademy.model.SelectionState
 
+// Displays descriptive details and breakdown topics for a single chosen course
 class CourseDetailPage : Fragment(R.layout.page_course_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // show whichever course was tapped on the courses page
+        // Fetch course structure matching the global active details key identifier
         val course = CourseCatalog.find(SelectionState.detailKey)
 
         view.findViewById<TextView>(R.id.tvDetailType).text =
@@ -25,6 +26,7 @@ class CourseDetailPage : Fragment(R.layout.page_course_detail) {
         view.findViewById<TextView>(R.id.tvDetailPrice).text = PricingCalculator.money(course.price)
         view.findViewById<TextView>(R.id.tvDetailPurpose).text = "Purpose: ${course.purpose}"
 
+        // Dynamically create text rows to list out syllabus contents
         val contentContainer = view.findViewById<LinearLayout>(R.id.contentContainer)
         course.content.forEach { topic ->
             val line = TextView(requireContext())

@@ -10,6 +10,7 @@ import com.zentrix.pawsitiveacademy.model.CourseCatalog
 import com.zentrix.pawsitiveacademy.model.PricingCalculator
 import com.zentrix.pawsitiveacademy.model.SelectionState
 
+// Displays the catalog of all available training courses
 class CoursesPage : Fragment(R.layout.page_courses) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -20,6 +21,7 @@ class CoursesPage : Fragment(R.layout.page_courses) {
         sixMonthContainer.removeAllViews()
         sixWeekContainer.removeAllViews()
 
+        // Loop through all courses and sort them into their respective UI lists
         CourseCatalog.all.forEach { course ->
             val container = if (course.duration == "6 weeks") sixWeekContainer else sixMonthContainer
             val item = LayoutInflater.from(requireContext())
@@ -29,6 +31,7 @@ class CoursesPage : Fragment(R.layout.page_courses) {
             item.findViewById<TextView>(R.id.tvCourseDuration).text = course.duration
             item.findViewById<TextView>(R.id.tvCoursePrice).text = PricingCalculator.money(course.price)
 
+            // Clicking a course saves its ID and opens the detailed view
             val selectButton = item.findViewById<android.widget.Button>(R.id.btnSelectCourse)
             selectButton.text = "View details"
             selectButton.setOnClickListener {
