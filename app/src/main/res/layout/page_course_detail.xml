@@ -36,6 +36,7 @@
                 android:background="@drawable/bg_course_image">
 
                 <ImageView
+                    android:id="@+id/ivDetailImage"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_gravity="center"

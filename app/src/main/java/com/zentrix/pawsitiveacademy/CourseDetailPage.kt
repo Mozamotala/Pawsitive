@@ -2,9 +2,12 @@ package com.zentrix.pawsitiveacademy
 
 import android.os.Bundle
 import android.view.View
+import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import com.zentrix.pawsitiveacademy.model.CourseCatalog
 import com.zentrix.pawsitiveacademy.model.PricingCalculator
@@ -25,6 +28,18 @@ class CourseDetailPage : Fragment(R.layout.page_course_detail) {
         view.findViewById<TextView>(R.id.tvDetailDuration).text = "Duration: ${course.duration}"
         view.findViewById<TextView>(R.id.tvDetailPrice).text = PricingCalculator.money(course.price)
         view.findViewById<TextView>(R.id.tvDetailPurpose).text = "Purpose: ${course.purpose}"
+
+        // Obedience has its own photo, the other courses keep the paw icon
+        if (course.key == "obedience") {
+            val image = view.findViewById<ImageView>(R.id.ivDetailImage)
+            image.setImageResource(R.drawable.photo_agility_training)
+            ImageViewCompat.setImageTintList(image, null)
+            image.scaleType = ImageView.ScaleType.CENTER_CROP
+            image.layoutParams = FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT
+            )
+        }
 
         // Dynamically create text rows to list out syllabus contents
         val contentContainer = view.findViewById<LinearLayout>(R.id.contentContainer)
