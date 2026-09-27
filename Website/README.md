@@ -65,7 +65,8 @@ Website/
 │   ├── images/
 │   │   ├── logo.jpg                  # Academy logo
 │   │   ├── logo-badge.png            # Round logo used in the header
-│   │   └── icons/                    # SVG Repo icons in the brand colour
+│   │   ├── icons/                    # SVG Repo icons in the brand colour
+│   │   └── photos/                   # Pexels photos (home, about, obedience)
 │   └── style/
 │       └── main.css                  # All styling
 ├── js/
@@ -84,6 +85,21 @@ Website/
 | Colours and fonts | Variables at the top of `assets/style/main.css` |
 | Page text and course details | The HTML files in `pages/` |
 | Images and icons | `assets/images/` |
+
+---
+
+## Image Credits
+
+The photos in `assets/images/photos/` are royalty-free images from [Pexels](https://www.pexels.com/). The icons in `assets/images/icons/` are from [SVG Repo](https://www.svgrepo.com/).
+
+| Image | Used on | Photographer |
+|---|---|---|
+| `hero-collie.jpg` | Home | Petráš |
+| `founder-sarah.jpg` | About Us (owner) | Magdy Talat |
+| `trainer-cane-corso.jpg` | About Us (team) | Umut Sarialan |
+| `trainer-black-dog.jpg` | About Us (team) | Oliveira |
+| `trainer-sheltie.jpg` | About Us (team) | Blue Bird |
+| `agility-training.jpg` | Canine Obedience Training details | Huerta |
 
 ---
 
