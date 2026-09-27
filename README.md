@@ -40,7 +40,7 @@ git clone https://github.com/EMGPSD/xhaw5112-2026-website-st10510475.git
 cd xhaw5112-2026-website-st10510475
 ```
 
-Open `Website/pages/index.html` in your browser.
+Open `Website/index.html` in your browser.
 
 ---
 
@@ -48,8 +48,8 @@ Open `Website/pages/index.html` in your browser.
 
 ```
 Website/
+├── index.html                        # Home
 ├── pages/
-│   ├── index.html                    # Home
 │   ├── aboutus.html                  # About Us
 │   ├── summarypage.html              # Courses summary
 │   ├── detailspage.html              # Canine Obedience Training details
@@ -62,26 +62,28 @@ Website/
 │   ├── feescalculator.html           # Pricing and fees calculator
 │   └── contactus.html                # Contact details and form
 ├── assets/
-│   ├── logo.jpg                      # Academy logo
-│   ├── logo-badge.png                # Round logo used in the header
-│   └── icons/                        # SVG Repo icons in the brand colour
-├── styles/
-│   └── main.css                      # All styling
-└── js/
-    └── script.js                     # Fees calculator and forms
+│   ├── images/
+│   │   ├── logo.jpg                  # Academy logo
+│   │   ├── logo-badge.png            # Round logo used in the header
+│   │   └── icons/                    # SVG Repo icons in the brand colour
+│   └── style/
+│       └── main.css                  # All styling
+├── js/
+│   └── script.js                     # Fees calculator and forms
+└── README.md
 ```
 
 ---
 
-## Customizing
+## Customising
 
 | What | Where |
 |---|---|
 | Course names, durations and prices | `courses` list in `js/script.js` |
 | Discount tiers and VAT | `discountRate` and `calculate` in `js/script.js` |
-| Colours and fonts | Variables at the top of `styles/main.css` |
+| Colours and fonts | Variables at the top of `assets/style/main.css` |
 | Page text and course details | The HTML files in `pages/` |
-| Icons | `assets/icons/` |
+| Images and icons | `assets/images/` |
 
 ---
 
