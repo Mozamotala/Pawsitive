@@ -13,6 +13,7 @@ import com.zentrix.pawsitiveacademy.model.PricingCalculator
 import com.zentrix.pawsitiveacademy.model.SelectionState
 import kotlin.math.roundToInt
 
+// Handles selecting courses and calculating discounts and final totals
 class CalculatorPage : Fragment(R.layout.page_calculator) {
 
     private lateinit var tvSubtotal: TextView
@@ -33,6 +34,7 @@ class CalculatorPage : Fragment(R.layout.page_calculator) {
         val optionsContainer = view.findViewById<LinearLayout>(R.id.optionsContainer)
         optionsContainer.removeAllViews()
 
+        // Dynamically add a checkbox row for every available course
         CourseCatalog.all.forEach { course ->
             val row = LayoutInflater.from(requireContext())
                 .inflate(R.layout.item_course_option, optionsContainer, false)
@@ -41,6 +43,7 @@ class CalculatorPage : Fragment(R.layout.page_calculator) {
             row.findViewById<TextView>(R.id.tvOptionDuration).text = course.duration
             row.findViewById<TextView>(R.id.tvOptionPrice).text = PricingCalculator.money(course.price)
 
+            // Save or clear selection state whenever checkbox is toggled
             val checkBox = row.findViewById<CheckBox>(R.id.cbCourse)
             checkBox.isChecked = SelectionState.selectedKeys.contains(course.key)
             checkBox.setOnCheckedChangeListener { _, isChecked ->
@@ -59,6 +62,7 @@ class CalculatorPage : Fragment(R.layout.page_calculator) {
         updateSummary()
     }
 
+    // Calculates and displays the prices, discounts, and total cost
     private fun updateSummary() {
         val selectedCourses = CourseCatalog.all.filter { SelectionState.selectedKeys.contains(it.key) }
         val result = PricingCalculator.calculate(selectedCourses)

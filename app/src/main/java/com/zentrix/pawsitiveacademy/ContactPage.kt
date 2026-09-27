@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
 
+// Handles user feedback, inquiries, and showing office map locations
 class ContactPage : Fragment(R.layout.page_contact) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class ContactPage : Fragment(R.layout.page_contact) {
         val emailField = view.findViewById<TextInputEditText>(R.id.etContactEmail)
         val messageField = view.findViewById<TextInputEditText>(R.id.etContactMessage)
 
-        // opens the academy address in the phone's maps app
+        // Opens the academy address in an external maps app via implicit intent
         view.findViewById<View>(R.id.btnDirections).setOnClickListener {
             val mapUri = Uri.parse("geo:0,0?q=" + Uri.encode("12 Florida Road, Morningside, Durban"))
             try {
@@ -27,6 +28,7 @@ class ContactPage : Fragment(R.layout.page_contact) {
             }
         }
 
+        // Validates input fields and saves contact information locally
         view.findViewById<View>(R.id.btnSendMessage).setOnClickListener {
             val name = nameField.text?.toString().orEmpty()
             val email = emailField.text?.toString().orEmpty()
