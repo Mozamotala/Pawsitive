@@ -1,0 +1,94 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  android:
+    name: Android app - lint and build APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: PawsitiveApp
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # The project has no committed Gradle wrapper, so CI installs the
+      # Gradle version named in gradle/wrapper/gradle-wrapper.properties
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: "8.7"
+          cache-provider: basic
+
+      - name: Android lint
+        run: gradle lintDebug
+
+      - name: Build debug APK
+        run: gradle assembleDebug
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: pawsitive-debug-apk
+          path: PawsitiveApp/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lint-report
+          path: PawsitiveApp/app/build/reports/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  website:
+    name: Website - HTML and links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      # Known issue: <div> inside <label> on feescalculator.html.
+      # It is reported as a warning for now; delete the --rule flag once fixed.
+      - name: Validate HTML
+        run: >
+          npx --yes html-validate@11
+          --preset standard
+          --rule element-permitted-content:warn
+          "Website/**/*.html"
+
+      # Checks links between pages and to local files (offline = no
+      # external sites, so the check never fails because a site is down).
+      # Known issue: every page links styles/main.css, which isn't committed.
+      # Remove the --exclude line once the stylesheet is added.
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline
+            --no-progress
+            --root-dir "${{ github.workspace }}"
+            --exclude "styles/main\.css$"
+            "Website/**/*.html"
