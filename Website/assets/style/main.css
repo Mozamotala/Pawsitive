@@ -1,0 +1,525 @@
+/* ==========================================================
+   main.css  -  Kelebogile Tema ST10510475
+   Pages: detailspage.html, summarypage.html
+   Section 1 = shared base (same in every submission)
+   Section 2 = ONLY the styles for this person's pages
+   ========================================================== */
+
+/* ==========================================================
+   SHARED BASE  -  DO NOT EDIT
+   This block is IDENTICAL in everyone's main.css so the pages
+   look the same on every page. If it has to change, tell the
+   group first and everyone pastes the same new version.
+   ========================================================== */
+
+:root {
+  --cream: #FFFDD0;
+  --blue: #B0E0E6;
+  --tan: #C68B59;
+  --brown: #5A3E2B;
+  --ink: #2F302D;
+  --muted: #66706D;
+  --white: #FFFFFF;
+  --line: #D9D4C7;
+  --success: #4D8B62;
+  --shadow: 0 16px 45px rgba(67,55,42,.12);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Calibri, Arial, sans-serif;
+  color: var(--ink);
+  background: #fbfaf5;
+  line-height: 1.55;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Book Antiqua", Georgia, serif;
+  line-height: 1.15;
+  color: var(--brown);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem,5vw,5rem);
+  letter-spacing: -.035em;
+}
+
+h2 {
+  font-size: clamp(2rem,3vw,3rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1180px,92%);
+  margin: auto;
+}
+
+.topbar {
+  background: var(--brown);
+  color: #fff;
+  font-size: .9rem;
+  padding: 8px 0;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,253,208,.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(90,62,43,.12);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--tan);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(198,139,89,.28);
+}
+
+.brand-mark svg {
+  width: 32px;
+  height: 32px;
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: block;
+}
+
+.brand-text {
+  font-family: "Book Antiqua", Georgia, serif;
+  color: var(--brown);
+  font-size: 1.2rem;
+}
+
+.brand-text small {
+  display: block;
+  font-family: Calibri, Arial, sans-serif;
+  font-size: .68rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav a, .mobile-menu a {
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: var(--brown);
+  display: inline-block;
+}
+
+nav a:hover, .mobile-menu a:hover {
+  background: var(--blue);
+}
+
+nav a.active {
+  background: var(--blue);
+}
+
+.primary {
+  border: 0;
+  background: var(--tan);
+  color: #fff!important;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(198,139,89,.25);
+}
+
+.primary:hover {
+  filter: brightness(.96);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  border: 1px solid var(--tan);
+  background: transparent;
+  color: var(--brown);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.7rem;
+  color: var(--brown);
+}
+
+.mobile-menu {
+  display: none;
+  border-top: 1px solid var(--line);
+  padding: 10px 4%;
+  background: var(--cream);
+}
+
+.mobile-menu a {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(176,224,230,.65);
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: var(--brown);
+  font-weight: 800;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+section {
+  padding: 85px 0;
+}
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: 38px;
+}
+
+.section-head p {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.checks {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checks li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--tan);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex: none;
+  font-weight: 900;
+}
+
+.meta {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(67,55,42,.07);
+}
+
+footer {
+  background: #2d2119;
+  color: #eee;
+  padding: 38px 0;
+}
+
+footer .footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+footer small {
+  color: #cfc6bd;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+  background: var(--brown);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: none;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-brand {
+  color: var(--brown);
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-18 {
+  margin-top: 18px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-14 {
+  margin-top: 14px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.brand-heading {
+  font-family: 'Book Antiqua', Georgia, serif;
+  font-size: 1.25rem;
+}
+
+@media(max-width:850px) {
+  nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+@media(max-width:600px) {
+  section {
+    padding: 65px 0;
+  }
+
+  .topbar .container {
+    justify-content: center;
+  }
+
+  .topbar .container span:last-child {
+    display: none;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   KELE ONLY  -  styles for detailspage.html, summarypage.html
+   ========================================================== */
+
+.course-groups {
+  display: grid;
+  gap: 45px;
+}
+
+.course-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.course-group h3 span {
+  font-family: Calibri, Arial, sans-serif;
+  font-size: .8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--blue);
+  font-weight: 800;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(67,55,42,.06);
+  transition: .2s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.course-image {
+  height: 175px;
+  background: linear-gradient(135deg,var(--blue),var(--cream));
+  display: grid;
+  place-items: center;
+}
+
+.course-image svg {
+  width: 90px;
+  height: 90px;
+}
+
+.course-image.large {
+  height: 260px;
+}
+
+.course-image.large svg {
+  width: 130px;
+  height: 130px;
+}
+
+.course-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.price {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--tan);
+  margin: 10px 0;
+}
+
+.course-body p {
+  color: var(--muted);
+  flex: 1;
+}
+
+.course-body .primary {
+  align-self: flex-start;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 22px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.course-body h3 {
+  margin: 18px 0 0;
+}
+
+.checks li:not(:has(.check))::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--tan);
+  flex: none;
+}
+
+.course-card h3 a:hover {
+  color: var(--tan);
+}
+
+.course-body .eyebrow {
+  align-self: flex-start;
+}
+
+@media(max-width:850px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-photo {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
