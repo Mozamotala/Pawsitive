@@ -1,8 +1,9 @@
 /* ==========================================================
-   main.css  -  Kelebogile Tema ST10510475
-   Pages: detailspage.html, summarypage.html
+   main.css  -  Kelebogile Tema ST10510475 and Theolin Chetty ST10507916
+   Pages: detailspage.html, summarypage.html (Kele)
+          index.html, aboutus.html (Theolin)
    Section 1 = shared base (same in every submission)
-   Section 2 = ONLY the styles for this person's pages
+   Section 2 = ONLY the styles for each person's pages
    ========================================================== */
 
 /* ==========================================================
@@ -522,4 +523,254 @@ footer small {
   width: 100%;
   height: 260px;
   object-fit: cover;
+}
+
+/* ==========================================================
+   THEOLIN ONLY  -  styles for index.html, aboutus.html
+   ========================================================== */
+
+.hero {
+  padding: 80px 0 65px;
+  background: radial-gradient(circle at 80% 20%,rgba(176,224,230,.75),transparent 35%), linear-gradient(135deg,var(--cream),#fff);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero p {
+  font-size: 1.18rem;
+  color: var(--muted);
+  max-width: 650px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-card {
+  background: #fff;
+  border: 1px solid rgba(90,62,43,.1);
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-art {
+  height: 390px;
+  border-radius: 22px;
+  background: linear-gradient(145deg,var(--blue),#edf8f6);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.hero-art:before, .hero-art:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,253,208,.8);
+}
+
+.hero-art:before {
+  width: 170px;
+  height: 170px;
+  top: 32px;
+  right: 30px;
+}
+
+.hero-art:after {
+  width: 110px;
+  height: 110px;
+  bottom: 25px;
+  left: 25px;
+}
+
+.dog-illustration {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: var(--tan);
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  box-shadow: 0 25px 50px rgba(90,62,43,.18);
+}
+
+.dog-illustration svg {
+  width: 170px;
+  height: 170px;
+}
+
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.trust {
+  padding: 15px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.trust strong {
+  display: block;
+  color: var(--brown);
+  font-size: 1.05rem;
+}
+
+.pathways-row {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pathway-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(67,55,42,.06);
+  transition: .2s;
+}
+
+.pathway-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.pathway-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--blue);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-card {
+  background: var(--blue);
+  border-radius: 28px;
+  padding: 38px;
+  box-shadow: var(--shadow);
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.hero-caption {
+  margin: 5px 0 0;
+  color: var(--muted);
+}
+
+.panel + .panel {
+  margin-top: 20px;
+}
+
+.panel h3 {
+  margin-bottom: 10px;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.panel li {
+  margin-bottom: 6px;
+}
+
+@media(max-width:850px) {
+  .hero-grid, .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pathways-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 50px;
+  }
+
+  .hero-art {
+    height: 300px;
+  }
+}
+
+@media(max-width:600px) {
+  .trust-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: 330px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 25px 50px rgba(90,62,43,.18);
+}
+
+.owner-photo {
+  display: block;
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 6px 0 14px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.team-member {
+  margin: 0;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 10px;
+}
+
+@media(max-width:600px) {
+  .hero-photo {
+    height: 250px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
