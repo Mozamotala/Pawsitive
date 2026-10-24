@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="16dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/bg_course_image">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_courses"
+            app:tint="@color/tan" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvCourseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/brown"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        tools:text="Canine Obedience Training" />
+
+    <TextView
+        android:id="@+id/tvCourseDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/muted"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        tools:text="6 months" />
+
+    <TextView
+        android:id="@+id/tvCoursePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/tan"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        tools:text="R1,500.00" />
+
+    <Button
+        android:id="@+id/btnSelectCourse"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/tan"
+        android:text="Select this course" />
+
+</LinearLayout>

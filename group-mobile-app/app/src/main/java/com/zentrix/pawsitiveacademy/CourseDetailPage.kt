@@ -1,0 +1,62 @@
+package com.zentrix.pawsitiveacademy
+
+import android.os.Bundle
+import android.view.View
+import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
+import androidx.fragment.app.Fragment
+import com.zentrix.pawsitiveacademy.model.CourseCatalog
+import com.zentrix.pawsitiveacademy.model.PricingCalculator
+import com.zentrix.pawsitiveacademy.model.SelectionState
+
+// Displays descriptive details and breakdown topics for a single chosen course
+class CourseDetailPage : Fragment(R.layout.page_course_detail) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Fetch course structure matching the global active details key identifier
+        val course = CourseCatalog.find(SelectionState.detailKey)
+
+        view.findViewById<TextView>(R.id.tvDetailType).text =
+            if (course.duration == "6 weeks") "SIX-WEEK COURSE" else "SIX-MONTH PROGRAMME"
+        view.findViewById<TextView>(R.id.tvDetailName).text = course.name
+        view.findViewById<TextView>(R.id.tvDetailDuration).text = "Duration: ${course.duration}"
+        view.findViewById<TextView>(R.id.tvDetailPrice).text = PricingCalculator.money(course.price)
+        view.findViewById<TextView>(R.id.tvDetailPurpose).text = "Purpose: ${course.purpose}"
+
+        // Obedience has its own photo, the other courses keep the paw icon
+        if (course.key == "obedience") {
+            val image = view.findViewById<ImageView>(R.id.ivDetailImage)
+            image.setImageResource(R.drawable.photo_agility_training)
+            ImageViewCompat.setImageTintList(image, null)
+            image.scaleType = ImageView.ScaleType.CENTER_CROP
+            image.layoutParams = FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT
+            )
+        }
+
+        // Dynamically create text rows to list out syllabus contents
+        val contentContainer = view.findViewById<LinearLayout>(R.id.contentContainer)
+        course.content.forEach { topic ->
+            val line = TextView(requireContext())
+            line.text = "- $topic"
+            line.setTextColor(ContextCompat.getColor(requireContext(), R.color.ink))
+            line.setPadding(0, 16, 0, 0)
+            contentContainer.addView(line)
+        }
+
+        view.findViewById<View>(R.id.btnBackToCourses).setOnClickListener {
+            (activity as? MainActivity)?.showScreen(MainActivity.Screen.COURSES)
+        }
+        view.findViewById<View>(R.id.btnSelectDetailCourse).setOnClickListener {
+            SelectionState.selectedKeys.add(course.key)
+            (activity as? MainActivity)?.showScreen(MainActivity.Screen.CALCULATOR)
+        }
+    }
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRICING"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:background="@drawable/bg_pill"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Multi-course discounts."
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="14dp"
+            android:text="Tick the courses you want to see your discount and total."
+            android:textColor="@color/muted" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2 courses: 5%" android:textColor="@color/ink" android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Take two courses and save 5%." android:textColor="@color/muted" android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3 courses: 10%" android:textColor="@color/ink" android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Take three courses and save 10%." android:textColor="@color/muted" android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4+ courses: 15%" android:textColor="@color/ink" android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Take four or more courses and save 15%." android:textColor="@color/muted" android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="FEES CALCULATOR"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:background="@drawable/bg_pill"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:text="Get a quote."
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/optionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_summary"
+            android:padding="20dp">
+
+            <LinearLayout style="@style/SummaryRow">
+                <TextView style="@style/SummaryLabel" android:text="Subtotal" />
+                <TextView android:id="@+id/tvSubtotal" style="@style/SummaryValue" tools:text="R0.00" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SummaryRow">
+                <TextView android:id="@+id/tvDiscountLabel" style="@style/SummaryLabel" tools:text="Discount 0%" />
+                <TextView android:id="@+id/tvDiscount" style="@style/SummaryValue" android:textColor="#D9F0D5" tools:text="-R0.00" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SummaryRow">
+                <TextView style="@style/SummaryLabel" android:text="VAT (15%)" />
+                <TextView android:id="@+id/tvVat" style="@style/SummaryValue" tools:text="R0.00" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SummaryRow" android:paddingTop="10dp">
+                <TextView style="@style/SummaryLabel" android:text="Estimated total" android:textSize="18sp" />
+                <TextView android:id="@+id/tvTotal" style="@style/SummaryValue" android:textSize="18sp" tools:text="R0.00" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="This is an estimate only. Sarah will contact you with your quote."
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnRequestQuote"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/tan"
+            android:text="Request quotation" />
+
+    </LinearLayout>
+</ScrollView>
