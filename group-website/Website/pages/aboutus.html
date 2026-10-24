@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<!-- About Us page: the academy's history, vision, mission, goals and owner -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Pawsitive Pet Academy and its owner, Sarah Smith.">
+<title>Pawsitive Pet Academy | About Us</title>
+<!-- Tab icon and the shared stylesheet used by every page -->
+<link rel="icon" href="../assets/images/logo-badge.png">
+<link rel="stylesheet" href="../assets/style/main.css">
+</head>
+<body>
+
+<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<div class="topbar">
+  <div class="container">
+    <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
+  </div>
+</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="../index.html" aria-label="Pawsitive Pet Academy home">
+      <img class="brand-logo" src="../assets/images/logo-badge.png" alt="Pawsitive Pet Academy logo" width="52" height="52">
+      <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="aboutus.html" class="active">About Us</a>
+      <a href="summarypage.html">Courses</a>
+      <a href="feescalculator.html">Pricing</a>
+      <a href="contactus.html">Contact</a>
+      <a class="primary" href="feescalculator.html">Get a Quote</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
+  </div>
+  <!-- Mobile menu: shown on small screens when the menu button is tapped.
+       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
+  <div id="webMenu" class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="summarypage.html">Courses</a>
+    <a href="feescalculator.html">Pricing</a>
+    <a href="contactus.html">Contact</a>
+    <a class="primary" href="feescalculator.html">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">About</span>
+        <h2>About the academy</h2>
+        <p>We teach the practical side of looking after pets: training, grooming, feeding, socialising and first aid.</p>
+      </div>
+
+      <!-- History, vision, mission and goals each get their own panel -->
+      <article class="panel">
+        <h3>How it started</h3>
+        <p>Sarah Smith started Pawsitive Pet Academy in Durban in 2023. She noticed that lots of people love their pets but aren't sure how to feed them properly, train them or help them in an emergency. Since then, hundreds of pet owners and future pet care workers have finished our six-week and six-month courses.</p>
+      </article>
+
+      <article class="panel">
+        <h3>Our vision</h3>
+        <p>To be the first place people in Durban think of when they want to learn about pet care and training.</p>
+      </article>
+
+      <article class="panel">
+        <h3>Our mission</h3>
+        <p>To give pet owners and pet care workers hands-on skills they can use straight away, so their animals stay happy and healthy.</p>
+      </article>
+
+      <article class="panel">
+        <h3>Our goals</h3>
+        <ul>
+          <li>Help more owners look after their pets properly.</li>
+          <li>Train people for jobs in the pet care industry.</li>
+          <li>Help people start their own pet businesses.</li>
+        </ul>
+      </article>
+
+      <!-- Short note about the owner, with a link to the Contact page -->
+      <aside class="panel">
+        <h3>Meet the owner</h3>
+        <img class="owner-photo" src="../assets/images/photos/founder-sarah.jpg" alt="Sarah Smith with her dog" width="200" height="300">
+        <p><strong>Sarah Smith</strong>, founder and owner<br>Based in Durban, South Africa</p>
+        <p>Have a question for Sarah? <a href="contactus.html">Get in touch</a>.</p>
+      </aside>
+
+      <!-- The trainers who teach the courses -->
+      <article class="panel">
+        <h3>Meet the team</h3>
+        <div class="team-grid">
+          <figure class="team-member">
+            <img src="../assets/images/photos/trainer-cane-corso.jpg" alt="Thabo Cele with a Cane Corso" width="160" height="240">
+            <figcaption><strong>Thabo Cele</strong><br>Trainer</figcaption>
+          </figure>
+          <figure class="team-member">
+            <img src="../assets/images/photos/trainer-black-dog.jpg" alt="Leanne Du Plessis with a black dog" width="160" height="240">
+            <figcaption><strong>Leanne Du Plessis</strong><br>Trainer</figcaption>
+          </figure>
+          <figure class="team-member">
+            <img src="../assets/images/photos/trainer-sheltie.jpg" alt="Devon Gounden with a Sheltie" width="160" height="240">
+            <figcaption><strong>Devon Gounden</strong><br>Trainer</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- Footer: academy name, address and copyright, the same on every page -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>12 Florida Road, Morningside, Durban</small>
+    </div>
+    <div>
+      <small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
+<div id="toast" class="toast"></div>
+<script src="../js/script.js"></script>
+</body>
+</html>

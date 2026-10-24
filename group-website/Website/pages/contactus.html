@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<!-- Contact Us page: contact details, map and an enquiry form -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Pawsitive Pet Academy in Morningside, Durban.">
+<title>Pawsitive Pet Academy | Contact Us</title>
+<!-- Tab icon and the shared stylesheet used by every page -->
+<link rel="icon" href="../assets/images/logo-badge.png">
+<link rel="stylesheet" href="../assets/style/main.css">
+</head>
+<body>
+
+<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<div class="topbar">
+  <div class="container">
+    <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
+  </div>
+</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="../index.html" aria-label="Pawsitive Pet Academy home">
+      <img class="brand-logo" src="../assets/images/logo-badge.png" alt="Pawsitive Pet Academy logo" width="52" height="52">
+      <span class="brand-text">Pawsitive <small>Pet Academy</small></span>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="summarypage.html">Courses</a>
+      <a href="feescalculator.html">Pricing</a>
+      <a href="contactus.html" class="active">Contact</a>
+      <a class="primary" href="feescalculator.html">Get a Quote</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
+  </div>
+  <!-- Mobile menu: shown on small screens when the menu button is tapped.
+       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
+  <div id="webMenu" class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="summarypage.html">Courses</a>
+    <a href="feescalculator.html">Pricing</a>
+    <a href="contactus.html">Contact</a>
+    <a class="primary" href="feescalculator.html">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="contact">
+    <div class="container contact-grid">
+      <!-- Left column: contact details and map -->
+      <div class="contact-info">
+        <span class="eyebrow">Contact</span>
+        <h2 class="mt-18">Contact us</h2>
+        <p>Got a question about a course, or ready to sign up? Give us a call, send an email or use the form.</p>
+        <div class="info-item">
+          <strong>Phone</strong><br>
+          <a href="tel:+27310000000">031 000 0000</a>
+        </div>
+        <div class="info-item">
+          <strong>Email</strong><br>
+          <a href="mailto:info@pawsitivepetacademy.co.za">info@pawsitivepetacademy.co.za</a>
+        </div>
+        <div class="info-item">
+          <strong>Address</strong><br>12 Florida Road, Morningside, Durban, 4001
+        </div>
+        <div class="info-item">
+          <strong>Office hours</strong><br>Monday to Friday, 08:00 to 17:00
+        </div>
+        <div class="info-item">
+          <strong>Social media</strong><br>
+          <!-- Placeholder links: replace these with the academy's real social media pages -->
+          <a href="https://www.facebook.com/">Facebook: Pawsitive Pet Academy</a>
+          <br>
+          <a href="https://www.instagram.com/">Instagram: @pawsitivepetacademy</a>
+        </div>
+        <div class="info-item"><strong>Find us</strong><br>
+          <!-- Embedded Google Map using the academy's address -->
+          <iframe title="Map to Pawsitive Pet Academy" src="https://maps.google.com/maps?q=12%20Florida%20Road%2C%20Morningside%2C%20Durban&amp;output=embed" width="100%" height="250" loading="lazy"></iframe>
+          <br>
+          <a href="https://maps.google.com/?q=12+Florida+Road,+Morningside,+Durban">Get directions</a>
+        </div>
+      </div>
+
+      <!-- Right column: enquiry form, sent by submitContact() in script.js (not part of this HTML-only version) -->
+      <div class="panel">
+        <h3>Send us a message</h3>
+        <p class="text-muted">Fill this in and we'll get back to you.</p>
+        <form class="quote-form" onsubmit="submitContact(event)">
+          <div class="field">
+            <label for="contactName">Full name</label>
+            <input id="contactName" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="contactEmail">Email address</label>
+            <input id="contactEmail" type="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="contactText">Message</label>
+            <textarea id="contactText" required placeholder="What would you like to know?"></textarea>
+          </div>
+          <button class="primary" type="submit">Send message</button>
+          <div id="contactMessage" class="form-message">Thanks! We've got your message and will be in touch soon.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer: academy name, address and copyright, the same on every page -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong class="brand-heading">Pawsitive Pet Academy</strong><br><small>12 Florida Road, Morningside, Durban</small>
+    </div>
+    <div>
+      <small>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
+<div id="toast" class="toast"></div>
+<script src="../js/script.js"></script>
+<!--script will be filled in later -->
+</body>
+</html>
