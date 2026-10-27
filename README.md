@@ -1,97 +1,206 @@
 # 🐾 Pawsitive Pet Academy: Website
 
-A responsive website for **Pawsitive Pet Academy**, a pet care and training academy based in Durban, South Africa. The site shows the academy's courses, a fees calculator with multi-course discounts, and quote and contact forms.
+This is the website for **Pawsitive Pet Academy**, a pet care and training academy in Morningside, Durban. Customers can look at the courses, work out what they will pay with the fees calculator, and ask for a quote or send a message.
 
 **Owner:** Sarah Smith
 **Location:** Durban, South Africa
+**Module:** XHAW5112 Work Integrated Learning, Meridian Tech Group
 
 ---
 
-## Features
+## What the site does
 
-- **Multi-page site:** Home, About Us, Courses, Pricing and Contact pages, with a sticky header and a mobile menu.
-- **Course catalogue:** all seven courses from the brief, each with its own detail page showing its purpose and content.
-- **Fees calculator:** select any combination of courses to see the subtotal, multi-course discount (5%, 10% or 15%), VAT (15%) and estimated total, updated live.
-- **Quote requests:** enter a name and email to request a quote for the selected courses.
-- **Contact form:** send a general enquiry to the academy.
-- **About Us:** the academy's history, vision, mission and goals.
-- **Contact details:** phone, email, address, hours, social links and a map.
-- **Responsive:** layouts for desktop, tablet and mobile, with no frameworks.
+- **Pages:** Home, About Us, Courses, Pricing (the fees calculator) and Contact Us. The header stays at the top, and on a small screen the menu turns into a drop-down.
+- **Courses:** all seven courses are listed on the Courses page, and every course has its own detail page.
+- **Fees calculator:** tick the courses you want and the subtotal, discount, VAT and total update straight away.
+- **Quote form:** type your name and email to ask Sarah for a quote.
+- **Contact Us:** phone number, email, address, office hours, social media links, a map and a message form.
+- **About Us:** who Sarah is, the academy's mission and vision, and the team.
+- **Looks right on any screen:** the layout changes for desktop, tablet and phone. No frameworks are used.
 
 ---
 
-## Tech Stack
+## How the fees work
+
+The 6-month courses cost **R1,500** each and the 6-week courses cost **R750** each.
+
+The discount depends on how many courses are ticked:
+
+| Courses ticked | Discount |
+|---|---|
+| 1 | 0% |
+| 2 | 5% |
+| 3 | 10% |
+| 4 or more | 15% |
+
+The discount comes off the subtotal first. Then **15% VAT** is added to what is left, because VAT is charged on the price the customer actually pays.
+
+Example with Canine Obedience, Pet Grooming, Puppy Care and Pet First Aid:
+
+| Line | Amount |
+|---|---|
+| Subtotal | R4,500.00 |
+| Discount (15%) | -R675.00 |
+| After discount | R3,825.00 |
+| VAT (15%) | R573.75 |
+| **Total** | **R4,398.75** |
+
+The total is only an estimate. Sarah sends the official quote.
+
+---
+
+## Design
+
+We kept the colours and fonts the same as the mobile app so both feel like one brand.
+
+| Colour | Code | Used for |
+|---|---|---|
+| Cream | `#FFFDD0` | Main backgrounds |
+| Powder Blue | `#B0E0E6` | Cards and sections that group information |
+| Tan | `#C68B59` | Buttons and other things you click |
+
+Fonts: **Book Antiqua** for headings, **Arial Narrow** for subheadings and **Calibri** for body text. The main colours are set as variables at the top of `main.css`, so they can be changed in one place.
+
+---
+
+## Built with
 
 - **HTML5 and CSS3**, with no build step
-- **Plain JavaScript** for the calculator and forms
+- **Plain JavaScript** for the calculator, the forms and the menu
 
 ---
 
-## Getting Started
+## How to run it
 
-### Prerequisites
-
-A modern web browser. No build tools or servers are needed.
-
-### Setup
+You only need a normal web browser. No tools or server are needed.
 
 ```bash
 git clone https://github.com/EMGPSD/xhaw5112-2026-website-st10510475.git
 cd xhaw5112-2026-website-st10510475
 ```
 
-Open `Website/index.html` in your browser.
+Then open `Website/index.html` in your browser.
 
 ---
 
-## Project Structure
+## Folder layout
 
 ```
 Website/
 ├── index.html                        # Home
 ├── pages/
 │   ├── aboutus.html                  # About Us
-│   ├── summarypage.html              # Courses summary
-│   ├── detailspage.html              # Canine Obedience Training details
-│   ├── detailspage-behaviour.html    # Animal Behaviour details
-│   ├── detailspage-business.html     # Pet Business Management details
-│   ├── detailspage-firstaid.html     # Pet First Aid details
-│   ├── detailspage-grooming.html     # Pet Grooming details
-│   ├── detailspage-puppy.html        # Puppy Care details
-│   ├── detailspage-walking.html      # Basic Dog Walking details
+│   ├── summarypage.html              # Courses (all seven)
+│   ├── detailspage.html              # Canine Obedience Training
+│   ├── detailspage-behaviour.html    # Animal Behaviour
+│   ├── detailspage-business.html     # Pet Business Management
+│   ├── detailspage-firstaid.html     # Pet First Aid
+│   ├── detailspage-grooming.html     # Pet Grooming
+│   ├── detailspage-puppy.html        # Puppy Care
+│   ├── detailspage-walking.html      # Basic Dog Walking
 │   ├── feescalculator.html           # Pricing and fees calculator
-│   └── contactus.html                # Contact details and form
+│   └── contactus.html                # Contact details and message form
 ├── assets/
 │   ├── images/
 │   │   ├── logo.jpg                  # Academy logo
-│   │   ├── logo-badge.png            # Round logo used in the header
-│   │   └── icons/                    # SVG Repo icons in the brand colour
+│   │   ├── logo-badge.png            # Round logo in the header
+│   │   ├── icons/                    # SVG Repo icons in the brand colour
+│   │   └── photos/                   # Pexels photos
 │   └── style/
-│       └── main.css                  # All styling
+│       └── main.css                  # All the styling
 ├── js/
-│   └── script.js                     # Fees calculator and forms
+│   └── script.js                     # Fees calculator, forms and menu
 └── README.md
 ```
 
 ---
 
-## Customising
+## Changing things
 
 | What | Where |
 |---|---|
-| Course names, durations and prices | `courses` list in `js/script.js` |
-| Discount tiers and VAT | `discountRate` and `calculate` in `js/script.js` |
-| Colours and fonts | Variables at the top of `assets/style/main.css` |
+| Course names, lengths and prices | `courses` list at the top of `js/script.js` |
+| Discount tiers and VAT | `DISCOUNTS` and `VAT` in `js/script.js` |
+| Colours | Variables at the top of `assets/style/main.css` |
 | Page text and course details | The HTML files in `pages/` |
 | Images and icons | `assets/images/` |
 
 ---
 
-## Roadmap
+## How we worked
 
-- [ ] Connect the quote and contact forms to a real backend
-- [ ] Generate an invoice page from the fees calculator
-- [ ] Add SEO and social sharing tags
+We used GitHub so the three of us could work on the same site without overwriting each other:
+
+1. Pull `main` first so you have the latest code.
+2. Make your own branch and do your work on it.
+3. Commit and push to your branch.
+4. Open a Pull Request.
+5. Someone else reviews it and merges it into `main`.
+
+Pull Requests merged so far:
+
+| PR | What it added |
+|---|---|
+| #7 | Kelebogile's CSS, which became the first `main.css` |
+| #8 | Theolin's Phase 3 CSS for the Home and About Us pages |
+| #9 | Mohamed's CSS and JavaScript (hover effects), and the Sheltie photo fix |
+
+---
+
+## Team
+
+| Member | Role |
+|---|---|
+| Kelebogile Tema | Website development lead |
+| Mohamed Motala | UI/UX design lead: logo, wireframes, Fees Calculator and Contact Us pages |
+| Theolin Chetty | Mobile app lead |
+
+---
+
+## Links
+
+| What | Link |
+|---|---|
+| Published website | **To add** once the site is published |
+| Group demo video (YouTube, unlisted) | **To add** |
+| Presentation (PowerPoint) | **To add** to this repository |
+| Mobile app repository | **To add** |
+| Figma wireframes | **To add** |
+
+---
+
+## Image credits
+
+The photos in `assets/images/photos/` are free images from [Pexels](https://www.pexels.com/). The icons in `assets/images/icons/` are from [SVG Repo](https://www.svgrepo.com/).
+
+| Image | Used on | Photographer |
+|---|---|---|
+| `hero-collie.jpg` | Home | Petráš |
+| `founder-sarah.jpg` | About Us (owner) | Magdy Talat |
+| `trainer-cane-corso.jpg` | About Us (team) | Umut Sarialan |
+| `trainer-black-dog.jpg` | About Us (team) | Oliveira |
+| `trainer-sheltie.jpg` | About Us (team) | Blue Bird |
+| `agility-training.jpg` | Canine Obedience Training details | Huerta |
+
+---
+
+## Still to do
+
+Website (Task 3 marking criteria):
+
+- [ ] Add a real `<table>` (the discount tiers on the Pricing page are the natural place)
+- [ ] Add error handling in `script.js`: stop a quote or contact request being sent with no courses ticked, a missing name, or an invalid email, and show a clear message
+- [ ] Add a drop-down menu that works on desktop too (for example Courses), not only the mobile menu
+- [ ] Add an invoice view or page from the fees calculator
+- [ ] Replace the placeholder Facebook and Instagram links on Contact Us
+- [ ] Publish the website and add the link above, then check the published version matches this repository
+- [ ] Remove the leftover "HTML-only version" comments from the pages and change `R1 500` to `R1,500`
+
+Repository and hand-in:
+
+- [ ] Merge this README and the tidied pages through a Pull Request that someone else reviews
+- [ ] Add the final PowerPoint and the YouTube video link to the repository
+- [ ] Check the repository is public and tidy up branches that are no longer needed
 
 ---
 
