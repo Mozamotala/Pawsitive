@@ -83,35 +83,54 @@ cd xhaw5112-2026-website-st10510475
 
 Then open `Website/index.html` in your browser.
 
+You can also use the live version at [pawsitive-pet-academy.web.app](https://pawsitive-pet-academy.web.app).
+
+---
+
+## Publishing changes
+
+The live site is hosted on Firebase Hosting. It does not update by itself when you push to GitHub. After changing the site, run this from the repository root (the folder with `firebase.json`):
+
+```bash
+firebase login                   # only the first time on a computer
+firebase deploy --only hosting
+```
+
+`firebase.json` tells Firebase to upload only the `Website` folder.
+
 ---
 
 ## Folder layout
 
 ```
-Website/
-├── index.html                        # Home
-├── pages/
-│   ├── aboutus.html                  # About Us
-│   ├── summarypage.html              # Courses (all seven)
-│   ├── detailspage.html              # Canine Obedience Training
-│   ├── detailspage-behaviour.html    # Animal Behaviour
-│   ├── detailspage-business.html     # Pet Business Management
-│   ├── detailspage-firstaid.html     # Pet First Aid
-│   ├── detailspage-grooming.html     # Pet Grooming
-│   ├── detailspage-puppy.html        # Puppy Care
-│   ├── detailspage-walking.html      # Basic Dog Walking
-│   ├── feescalculator.html           # Pricing and fees calculator
-│   └── contactus.html                # Contact details and message form
-├── assets/
-│   ├── images/
-│   │   ├── logo.jpg                  # Academy logo
-│   │   ├── logo-badge.png            # Round logo in the header
-│   │   ├── icons/                    # SVG Repo icons in the brand colour
-│   │   └── photos/                   # Pexels photos
-│   └── style/
-│       └── main.css                  # All the styling
-├── js/
-│   └── script.js                     # Fees calculator, forms and menu
+xhaw5112-2026-website-st10510475/
+├── Website/
+│   ├── index.html                        # Home
+│   ├── pages/
+│   │   ├── aboutus.html                  # About Us
+│   │   ├── summarypage.html              # Courses (all seven)
+│   │   ├── detailspage.html              # Canine Obedience Training
+│   │   ├── detailspage-behaviour.html    # Animal Behaviour
+│   │   ├── detailspage-business.html     # Pet Business Management
+│   │   ├── detailspage-firstaid.html     # Pet First Aid
+│   │   ├── detailspage-grooming.html     # Pet Grooming
+│   │   ├── detailspage-puppy.html        # Puppy Care
+│   │   ├── detailspage-walking.html      # Basic Dog Walking
+│   │   ├── feescalculator.html           # Pricing and fees calculator
+│   │   └── contactus.html                # Contact details and message form
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── logo.jpg                  # Academy logo
+│   │   │   ├── logo-badge.png            # Round logo in the header
+│   │   │   ├── icons/                    # SVG Repo icons in the brand colour
+│   │   │   └── photos/                   # Pexels photos
+│   │   └── style/
+│   │       └── main.css                  # All the styling
+│   └── js/
+│       └── script.js                     # Fees calculator, forms and menu
+├── Pawsitive_Full_Presentation_v11.pptx   # Final presentation
+├── firebase.json                          # Firebase Hosting settings (uploads the Website folder)
+├── .firebaserc                            # Which Firebase project to deploy to
 └── README.md
 ```
 
@@ -166,7 +185,7 @@ Pull Requests merged so far:
 | Published website | [pawsitive-pet-academy.web.app](https://pawsitive-pet-academy.web.app) |
 | Part 2 video (YouTube) | [Watch on YouTube](https://www.youtube.com/watch?v=iXkaTIPUEzo) |
 | Final group demo video (YouTube, unlisted) | **To add** |
-| Presentation (PowerPoint) | [`Pawsitive_Full_Presentation_v11.pptx`](Pawsitive_Full_Presentation_v11.pptx) |
+| Presentation (PowerPoint) | [`Pawsitive_Full_Presentation_v11.pptx`](Pawsitive_Full_Presentation_v11.pptx). The last two slides have QR codes for the demo video and the live website |
 | Mobile app repository | [EMGPSD/xhaw5112-2026-mobile-app-st10510475](https://github.com/EMGPSD/xhaw5112-2026-mobile-app-st10510475) |
 | Figma wireframes (high and low fidelity) | [Open in Figma](https://www.figma.com/design/qrdFFWdxOEHT699YodJ3iU/task-1-part-3-and-part-2?node-id=0-1) |
 
