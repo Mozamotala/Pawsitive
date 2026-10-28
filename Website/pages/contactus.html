@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
-<!-- Contact Us page: contact details, map and an enquiry form -->
+<!-- Contact Us page: all the ways to reach us, a map and a message form -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Contact Pawsitive Pet Academy in Morningside, Durban.">
 <title>Pawsitive Pet Academy | Contact Us</title>
-<!-- Tab icon and the shared stylesheet used by every page -->
+<!-- The little logo in the browser tab, and my CSS file that styles every page -->
 <link rel="icon" href="../assets/images/logo-badge.png">
 <link rel="stylesheet" href="../assets/style/main.css">
 </head>
 <body>
 
-<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<!-- Top bar and header with the logo and the menu. It's the same on every page,
+     only the "active" link changes so you can see which page you're on -->
 <div class="topbar">
   <div class="container">
     <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
@@ -27,6 +28,7 @@
     <nav>
       <a href="../index.html">Home</a>
       <a href="aboutus.html">About Us</a>
+      <!-- Courses drop-down: click "Courses" and a small menu opens with links to the course groups -->
       <details class="nav-dropdown">
         <summary class="nav-dropdown-toggle">Courses</summary>
         <div class="nav-dropdown-menu">
@@ -39,10 +41,11 @@
       <a href="contactus.html" class="active">Contact</a>
       <a class="primary" href="feescalculator.html">Get a Quote</a>
     </nav>
+    <!-- The ☰ button, it only shows on small screens and runs toggleWebMenu() in script.js -->
     <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
   </div>
-  <!-- Mobile menu: shown on small screens when the menu button is tapped.
-       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
+  <!-- Mobile menu: hidden until you tap the ☰ button on a phone or small screen.
+       toggleWebMenu() in script.js opens and closes it -->
   <div id="webMenu" class="mobile-menu">
     <a href="../index.html">Home</a>
     <a href="aboutus.html">About Us</a>
@@ -56,7 +59,7 @@
 <main>
   <section class="contact">
     <div class="container contact-grid">
-      <!-- Left column: contact details and map -->
+      <!-- Left side: phone, email, address, office hours, social media and the map -->
       <div class="contact-info">
         <span class="eyebrow">Contact</span>
         <h2 class="mt-18">Contact us</h2>
@@ -77,18 +80,18 @@
         </div>
         <div class="info-item">
           <strong>Social media</strong><br>
-          <!-- Official social profile URLs have not been provided yet. -->
+          <!-- We don't have the real Facebook and Instagram links yet, so this is a placeholder for now -->
           <span>Official profiles will be added when available.</span>
         </div>
         <div class="info-item"><strong>Find us</strong><br>
-          <!-- Embedded Google Map using the academy's address -->
+          <!-- Google Map showing where the academy is -->
           <iframe title="Map to Pawsitive Pet Academy" src="https://maps.google.com/maps?q=12%20Florida%20Road%2C%20Morningside%2C%20Durban&amp;output=embed" width="100%" height="250" loading="lazy"></iframe>
           <br>
           <a href="https://maps.google.com/?q=12+Florida+Road,+Morningside,+Durban" target="_blank" rel="noopener noreferrer">Get directions</a>
         </div>
       </div>
 
-      <!-- Right column: enquiry form, sent by submitContact() in script.js (not part of this HTML-only version) -->
+      <!-- Right side: the message form. When you click "Send message", submitContact() in script.js checks it first -->
       <div class="panel">
         <h3>Send us a message</h3>
         <p class="text-muted">Fill this in and we'll get back to you.</p>
@@ -105,8 +108,10 @@
             <label for="contactText">Message</label>
             <textarea id="contactText" required placeholder="What would you like to know?" oninput="clearFormError('contactError')"></textarea>
           </div>
+          <!-- Red error box, hidden until something is missing or wrong -->
           <div id="contactError" class="form-error" role="alert" aria-live="assertive" hidden></div>
           <button class="primary" type="submit">Send message</button>
+          <!-- Thank you message, only shows once the form has been sent -->
           <div id="contactMessage" class="form-message">Thanks! We've got your message and will be in touch soon.</div>
         </form>
       </div>
@@ -114,7 +119,7 @@
   </section>
 </main>
 
-<!-- Footer: academy name, address and copyright, the same on every page -->
+<!-- Footer at the bottom of every page with the academy name, address and copyright -->
 <footer>
   <div class="container footer-grid">
     <div>
@@ -125,9 +130,9 @@
     </div>
   </div>
 </footer>
-<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
+<!-- Small pop-up message box. showToast() in script.js puts a message in it and shows it for 3 seconds -->
 <div id="toast" class="toast"></div>
+<!-- Links my JavaScript file so the menu, calculator and forms actually work -->
 <script src="../js/script.js"></script>
-<!--script will be filled in later -->
 </body>
 </html>

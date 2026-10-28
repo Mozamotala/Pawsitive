@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
-<!-- Pricing page: discount rules, the fees calculator and the quote request form -->
+<!-- Pricing page: the discount table, the fees calculator, the quote form and the invoice preview -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Pawsitive Pet Academy course prices, discounts and fees calculator.">
 <title>Pawsitive Pet Academy | Pricing</title>
-<!-- Tab icon and the shared stylesheet used by every page -->
+<!-- The little logo in the browser tab, and my CSS file that styles every page -->
 <link rel="icon" href="../assets/images/logo-badge.png">
 <link rel="stylesheet" href="../assets/style/main.css">
 </head>
 <body>
 
-<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<!-- Top bar and header with the logo and the menu. It's the same on every page,
+     only the "active" link changes so you can see which page you're on -->
 <div class="topbar">
   <div class="container">
     <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
@@ -27,6 +28,7 @@
     <nav>
       <a href="../index.html">Home</a>
       <a href="aboutus.html">About Us</a>
+      <!-- Courses drop-down: click "Courses" and a small menu opens with links to the course groups -->
       <details class="nav-dropdown">
         <summary class="nav-dropdown-toggle">Courses</summary>
         <div class="nav-dropdown-menu">
@@ -39,10 +41,11 @@
       <a href="contactus.html">Contact</a>
       <a class="primary" href="feescalculator.html">Get a Quote</a>
     </nav>
+    <!-- The ☰ button, it only shows on small screens and runs toggleWebMenu() in script.js -->
     <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
   </div>
-  <!-- Mobile menu: shown on small screens when the menu button is tapped.
-       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
+  <!-- Mobile menu: hidden until you tap the ☰ button on a phone or small screen.
+       toggleWebMenu() in script.js opens and closes it -->
   <div id="webMenu" class="mobile-menu">
     <a href="../index.html">Home</a>
     <a href="aboutus.html">About Us</a>
@@ -54,7 +57,7 @@
 </header>
 
 <main>
-  <!-- Discount rules: the more courses, the bigger the discount -->
+  <!-- Discount table: the more courses you pick, the bigger the discount -->
   <section>
     <div class="container">
       <div class="section-head">
@@ -77,7 +80,7 @@
     </div>
   </section>
 
-  <!-- Fees calculator: tick courses on the left, see the quote on the right -->
+  <!-- Fees calculator: you tick courses on the left and your quote shows on the right -->
   <section class="bg-cream">
     <div class="container">
       <div class="section-head">
@@ -88,8 +91,9 @@
       <div class="calculator-wrap">
         <div class="panel">
           <h3>Choose your courses</h3>
-          <!-- Each checkbox value is the course's short name. It must match the course list in script.js
-               and the "#name" links on the course details pages. -->
+          <!-- Each checkbox value is the course's short name, it has to match the course list in script.js
+               and the "#name" links on the course details pages.
+               When you tick or untick a box it runs updateCalculator(), which works out the discount and totals -->
           <div id="courseOptions">
             <label class="course-option">
               <input type="checkbox" value="obedience" onchange="updateCalculator()">
@@ -148,7 +152,7 @@
         </div>
 
         <!-- Quote summary: subtotal, discount, 15% VAT and total.
-             updateCalculator() in script.js fills these in; without it they stay at R0.00. -->
+             They start at R0.00 and updateCalculator() in script.js fills in the real numbers -->
         <aside class="panel summary">
           <h3>Your quote</h3>
           <div id="selectedSummary">
@@ -168,7 +172,7 @@
           </div>
           <div class="notice">This is only an estimate. Sarah will email you an official quote.</div>
 
-          <!-- Quote request form: sent by submitQuote() in script.js (not part of this HTML-only version) -->
+          <!-- Quote form: when you click "Request my quote", submitQuote() in script.js checks it first -->
           <form class="quote-form" onsubmit="submitQuote(event)" novalidate>
             <div class="field">
               <label for="quoteName">Full name</label>
@@ -178,12 +182,15 @@
               <label for="quoteEmail">Email address</label>
               <input id="quoteEmail" type="email" required placeholder="you@example.com" oninput="clearQuoteError()">
             </div>
+            <!-- Red error box, hidden until something is missing or wrong -->
             <div id="quoteError" class="form-error" role="alert" aria-live="assertive" hidden></div>
             <button class="primary" type="submit">Request my quote</button>
             <button class="secondary" type="button" onclick="showInvoice()">Preview invoice</button>
             <div id="quoteMessage" class="form-message">Thanks! We've got your request and will be in touch soon.</div>
           </form>
 
+          <!-- Invoice preview: hidden until you click "Preview invoice", then showInvoice() in script.js
+               fills it in. The Print button prints just the invoice -->
           <section id="invoiceView" class="invoice-view" aria-labelledby="invoiceTitle" hidden>
             <div class="invoice-heading">
               <div>
@@ -210,7 +217,7 @@
   </section>
 </main>
 
-<!-- Footer: academy name, address and copyright, the same on every page -->
+<!-- Footer at the bottom of every page with the academy name, address and copyright -->
 <footer>
   <div class="container footer-grid">
     <div>
@@ -221,8 +228,9 @@
     </div>
   </div>
 </footer>
-<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
+<!-- Small pop-up message box. showToast() in script.js puts a message in it and shows it for 3 seconds -->
 <div id="toast" class="toast"></div>
+<!-- Links my JavaScript file so the menu, calculator and forms actually work -->
 <script src="../js/script.js"></script>
 </body>
 </html>
