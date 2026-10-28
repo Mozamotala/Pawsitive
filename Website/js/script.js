@@ -39,6 +39,8 @@ function updateCalculator() {
   $('selectedSummary').innerHTML = items.length
     ? items.map(c => `<div class="summary-line"><span>${c.name}</span><strong>${money(c.price)}</strong></div>`).join('')
     : '<div class="text-placeholder">No courses selected yet.</div>';
+  $('quoteError').hidden = true;
+  $('invoiceView').hidden = true;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,14 +51,113 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCalculator();
 });
 
-function submitForm(e, messageId, toastText) {
-  e.preventDefault();
-  $(messageId).style.display = 'block';
-  showToast(toastText);
+function selectedCourses() {
+  return [...document.querySelectorAll('#courseOptions input[type=checkbox]:checked')]
+    .map(input => courses[input.value]);
 }
 
-const submitQuote = e => submitForm(e, 'quoteMessage', 'Quote request sent.');
-const submitContact = e => submitForm(e, 'contactMessage', 'Message sent.');
+function isValidEmail(input) {
+  return input.value.trim() !== '' && input.checkValidity();
+}
+
+function showFormError(id, message) {
+  $(id).textContent = message;
+  $(id).hidden = false;
+}
+
+function clearFormError(id) {
+  $(id).hidden = true;
+}
+
+function clearQuoteError() {
+  clearFormError('quoteError');
+  $('invoiceView').hidden = true;
+}
+
+function validateQuote() {
+  const items = selectedCourses();
+  const name = $('quoteName').value.trim();
+  const email = $('quoteEmail');
+
+  if (!items.length) return { error: 'Please select at least one course before requesting a quote or viewing an invoice.' };
+  if (!name) return { error: 'Please enter your full name.' };
+  if (!isValidEmail(email)) return { error: 'Please enter a valid email address.' };
+
+  return { items, name, email: email.value.trim() };
+}
+
+function submitQuote(e) {
+  e.preventDefault();
+  $('quoteMessage').style.display = 'none';
+  const quote = validateQuote();
+  if (quote.error) {
+    showFormError('quoteError', quote.error);
+    return;
+  }
+
+  clearFormError('quoteError');
+  $('quoteMessage').style.display = 'block';
+  showToast('Quote request sent.');
+}
+
+function submitContact(e) {
+  e.preventDefault();
+  $('contactMessage').style.display = 'none';
+
+  if (!$('contactName').value.trim()) {
+    showFormError('contactError', 'Please enter your full name.');
+    return;
+  }
+  if (!isValidEmail($('contactEmail'))) {
+    showFormError('contactError', 'Please enter a valid email address.');
+    return;
+  }
+  if (!$('contactText').value.trim()) {
+    showFormError('contactError', 'Please enter a message.');
+    return;
+  }
+
+  clearFormError('contactError');
+  $('contactMessage').style.display = 'block';
+  showToast('Message sent.');
+}
+
+function showInvoice() {
+  const quote = validateQuote();
+  if (quote.error) {
+    showFormError('quoteError', quote.error);
+    return;
+  }
+
+  clearFormError('quoteError');
+  const subtotal = quote.items.reduce((sum, course) => sum + course.price, 0);
+  const rate = DISCOUNTS[Math.min(quote.items.length, 4)];
+  const discount = subtotal * rate;
+  const vat = (subtotal - discount) * VAT;
+  const total = subtotal - discount + vat;
+  const rows = $('invoiceItems');
+  rows.replaceChildren();
+
+  quote.items.forEach(course => {
+    const row = document.createElement('tr');
+    const name = document.createElement('td');
+    const price = document.createElement('td');
+    name.textContent = course.name;
+    price.textContent = money(course.price);
+    row.append(name, price);
+    rows.append(row);
+  });
+
+  $('invoiceName').textContent = quote.name;
+  $('invoiceEmail').textContent = quote.email;
+  $('invoiceSubtotal').textContent = money(subtotal);
+  $('invoiceDiscountRate').textContent = Math.round(rate * 100) + '%';
+  $('invoiceDiscount').textContent = '-' + money(discount);
+  $('invoiceVat').textContent = money(vat);
+  $('invoiceTotal').textContent = money(total);
+  $('invoiceView').hidden = false;
+  $('invoiceView').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
 
 function showToast(text) {
   const el = $('toast');

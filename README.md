@@ -10,11 +10,11 @@ This is the website for **Pawsitive Pet Academy**, a pet care and training acade
 
 ## What the site does
 
-- **Pages:** Home, About Us, Courses, Pricing (the fees calculator) and Contact Us. The header stays at the top, and on a small screen the menu turns into a drop-down.
+- **Pages:** Home, About Us, Courses, Pricing (the fees calculator) and Contact Us. The header stays at the top; Courses has a keyboard-accessible drop-down on desktop, and the menu button opens the navigation on smaller screens.
 - **Courses:** all seven courses are listed on the Courses page, and every course has its own detail page.
-- **Fees calculator:** tick the courses you want and the subtotal, discount, VAT and total update straight away.
-- **Quote form:** type your name and email to ask Sarah for a quote.
-- **Contact Us:** phone number, email, address, office hours, social media links, a map and a message form.
+- **Fees calculator:** tick the courses you want and the subtotal, discount, VAT and total update straight away. Preview and print an itemized estimate from the calculator.
+- **Quote form:** select at least one course and enter a name and valid email to request a quote.
+- **Contact Us:** phone number, email, address, office hours, social media links, a map and a message form with input validation.
 - **About Us:** who Sarah is, the academy's mission and vision, and the team.
 - **Looks right on any screen:** the layout changes for desktop, tablet and phone. No frameworks are used.
 
@@ -188,13 +188,13 @@ The photos in `assets/images/photos/` are free images from [Pexels](https://www.
 
 Website (Task 3 marking criteria):
 
-- [ ] Add a real `<table>` (the discount tiers on the Pricing page are the natural place)
-- [ ] Add error handling in `script.js`: stop a quote or contact request being sent with no courses ticked, a missing name, or an invalid email, and show a clear message
-- [ ] Add a drop-down menu that works on desktop too (for example Courses), not only the mobile menu
-- [ ] Add an invoice view or page from the fees calculator
-- [ ] Replace the placeholder Facebook and Instagram links on Contact Us
+- [x] Add a real `<table>` for the discount tiers on the Pricing page
+- [x] Validate quote and contact forms and show a clear error message for missing courses, name, or invalid email
+- [x] Add a Courses drop-down menu that works on desktop as well as mobile
+- [x] Add an itemized invoice estimate view and print option to the fees calculator
+- [ ] Add the academy's verified Facebook and Instagram profile URLs to Contact Us (the placeholder links have been removed until the URLs are provided)
 - [ ] Publish the website and add the link above, then check the published version matches this repository
-- [ ] Remove the leftover "HTML-only version" comments from the pages and change `R1 500` to `R1,500`
+- [ ] Remove the leftover "HTML-only version" comments from the pages and change `R1 500` to `R1,500` (prices are updated; comments were restored as requested)
 
 Repository and hand-in:
 

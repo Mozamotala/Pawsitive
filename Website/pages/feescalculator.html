@@ -27,7 +27,14 @@
     <nav>
       <a href="../index.html">Home</a>
       <a href="aboutus.html">About Us</a>
-      <a href="summarypage.html">Courses</a>
+      <details class="nav-dropdown">
+        <summary class="nav-dropdown-toggle">Courses</summary>
+        <div class="nav-dropdown-menu">
+          <a href="summarypage.html">All courses</a>
+          <a href="summarypage.html#six-month-programmes">Six-month programmes</a>
+          <a href="summarypage.html#six-week-courses">Six-week courses</a>
+        </div>
+      </details>
       <a href="feescalculator.html" class="active">Pricing</a>
       <a href="contactus.html">Contact</a>
       <a class="primary" href="feescalculator.html">Get a Quote</a>
@@ -55,20 +62,18 @@
         <h2>Discounts</h2>
         <p>The more courses you sign up for, the more you save.</p>
       </div>
-      <div class="pricing-grid">
-        <div class="price-rule">
-          <span class="meta">2 courses</span><strong>5%</strong>
-          <p>Sign up for two courses and get 5% off.</p>
-        </div>
-        <div class="price-rule">
-          <span class="meta">3 courses</span><strong>10%</strong>
-          <p>Sign up for three courses and get 10% off.</p>
-        </div>
-        <div class="price-rule">
-          <span class="meta">4+ courses</span><strong>15%</strong>
-          <p>Sign up for four or more and get 15% off.</p>
-        </div>
-      </div>
+      <table class="discount-table">
+        <caption>Discount by number of courses selected</caption>
+        <thead>
+          <tr><th scope="col">Courses selected</th><th scope="col">Discount</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">1 course</th><td>0%</td></tr>
+          <tr><th scope="row">2 courses</th><td>5%</td></tr>
+          <tr><th scope="row">3 courses</th><td>10%</td></tr>
+          <tr><th scope="row">4 or more courses</th><td>15%</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -91,28 +96,28 @@
               <div class="option-info">
                 <strong>Canine Obedience Training</strong><small>6 months</small>
               </div>
-              <span class="option-price">R1 500</span>
+              <span class="option-price">R1,500</span>
             </label>
             <label class="course-option">
               <input type="checkbox" value="grooming" onchange="updateCalculator()">
               <div class="option-info">
                 <strong>Pet Grooming</strong><small>6 months</small>
               </div>
-              <span class="option-price">R1 500</span>
+              <span class="option-price">R1,500</span>
             </label>
             <label class="course-option">
               <input type="checkbox" value="behaviour" onchange="updateCalculator()">
               <div class="option-info">
                 <strong>Animal Behaviour</strong><small>6 months</small>
               </div>
-              <span class="option-price">R1 500</span>
+              <span class="option-price">R1,500</span>
             </label>
             <label class="course-option">
               <input type="checkbox" value="business" onchange="updateCalculator()">
               <div class="option-info">
                 <strong>Pet Business Management</strong><small>6 months</small>
               </div>
-              <span class="option-price">R1 500</span>
+              <span class="option-price">R1,500</span>
             </label>
             <label class="course-option">
               <input type="checkbox" value="puppy" onchange="updateCalculator()">
@@ -164,18 +169,41 @@
           <div class="notice">This is only an estimate. Sarah will email you an official quote.</div>
 
           <!-- Quote request form: sent by submitQuote() in script.js (not part of this HTML-only version) -->
-          <form class="quote-form" onsubmit="submitQuote(event)">
+          <form class="quote-form" onsubmit="submitQuote(event)" novalidate>
             <div class="field">
               <label for="quoteName">Full name</label>
-              <input id="quoteName" required placeholder="Your name">
+              <input id="quoteName" required placeholder="Your name" oninput="clearQuoteError()">
             </div>
             <div class="field">
               <label for="quoteEmail">Email address</label>
-              <input id="quoteEmail" type="email" required placeholder="you@example.com">
+              <input id="quoteEmail" type="email" required placeholder="you@example.com" oninput="clearQuoteError()">
             </div>
+            <div id="quoteError" class="form-error" role="alert" aria-live="assertive" hidden></div>
             <button class="primary" type="submit">Request my quote</button>
+            <button class="secondary" type="button" onclick="showInvoice()">Preview invoice</button>
             <div id="quoteMessage" class="form-message">Thanks! We've got your request and will be in touch soon.</div>
           </form>
+
+          <section id="invoiceView" class="invoice-view" aria-labelledby="invoiceTitle" hidden>
+            <div class="invoice-heading">
+              <div>
+                <h3 id="invoiceTitle">Invoice preview</h3>
+                <p>This is an estimate, not a payment invoice.</p>
+              </div>
+              <button class="secondary" type="button" onclick="window.print()">Print</button>
+            </div>
+            <p>Prepared for <strong id="invoiceName"></strong><br><span id="invoiceEmail"></span></p>
+            <table class="invoice-table">
+              <thead><tr><th scope="col">Course</th><th scope="col">Amount</th></tr></thead>
+              <tbody id="invoiceItems"></tbody>
+              <tfoot>
+                <tr><th scope="row">Subtotal</th><td id="invoiceSubtotal"></td></tr>
+                <tr><th scope="row">Discount (<span id="invoiceDiscountRate"></span>)</th><td id="invoiceDiscount"></td></tr>
+                <tr><th scope="row">VAT (15%)</th><td id="invoiceVat"></td></tr>
+                <tr class="invoice-total"><th scope="row">Estimated total</th><td id="invoiceTotal"></td></tr>
+              </tfoot>
+            </table>
+          </section>
         </aside>
       </div>
     </div>
