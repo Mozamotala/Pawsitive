@@ -14,7 +14,7 @@ This is the website for **Pawsitive Pet Academy**, a pet care and training acade
 - **Courses:** all seven courses are listed on the Courses page, and every course has its own detail page.
 - **Fees calculator:** tick the courses you want and the subtotal, discount, VAT and total update straight away. Preview and print an itemized estimate from the calculator.
 - **Quote form:** select at least one course and enter a name and valid email to request a quote.
-- **Contact Us:** phone number, email, address, office hours, social media links, a map and a message form with input validation.
+- **Contact Us:** phone number, email, address, office hours, a map with directions and a message form with input validation. Social media profiles will be added once the academy's real links are available.
 - **About Us:** who Sarah is, the academy's mission and vision, and the team.
 - **Looks right on any screen:** the layout changes for desktop, tablet and phone. No frameworks are used.
 
@@ -67,6 +67,8 @@ Fonts: **Book Antiqua** for headings, **Arial Narrow** for subheadings and **Cal
 
 - **HTML5 and CSS3**, with no build step
 - **Plain JavaScript** for the calculator, the forms and the menu
+
+Every HTML page and `script.js` has plain-English comments explaining what each part does, so the code is easy to follow for anyone new to it.
 
 ---
 
@@ -194,7 +196,7 @@ Website (Task 3 marking criteria):
 - [x] Add an itemized invoice estimate view and print option to the fees calculator
 - [ ] Add the academy's verified Facebook and Instagram profile URLs to Contact Us (the placeholder links have been removed until the URLs are provided)
 - [ ] Publish the website and add the link above, then check the published version matches this repository
-- [ ] Remove the leftover "HTML-only version" comments from the pages and change `R1 500` to `R1,500` (prices are updated; comments were restored as requested)
+- [x] Remove the leftover "HTML-only version" comments, change `R1 500` to `R1,500`, and add clear comments throughout the HTML and JavaScript
 
 Repository and hand-in:
 
