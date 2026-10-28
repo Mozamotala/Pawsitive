@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
-<!-- Courses page: every course, grouped by length, with a link to its details page -->
+<!-- Courses page: every course we offer, split by length, with a link to each one's details page -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="All Pawsitive Pet Academy courses, with length and price.">
 <title>Pawsitive Pet Academy | Courses</title>
-<!-- Tab icon and the shared stylesheet used by every page -->
+<!-- The little logo in the browser tab, and my CSS file that styles every page -->
 <link rel="icon" href="../assets/images/logo-badge.png">
 <link rel="stylesheet" href="../assets/style/main.css">
 </head>
 <body>
 
-<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<!-- Top bar and header with the logo and the menu. It's the same on every page,
+     only the "active" link changes so you can see which page you're on -->
 <div class="topbar">
   <div class="container">
     <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
@@ -27,15 +28,24 @@
     <nav>
       <a href="../index.html">Home</a>
       <a href="aboutus.html">About Us</a>
-      <a href="summarypage.html" class="active">Courses</a>
+      <!-- Courses drop-down: click "Courses" and a small menu opens with links to the course groups -->
+      <details class="nav-dropdown">
+        <summary class="nav-dropdown-toggle active">Courses</summary>
+        <div class="nav-dropdown-menu">
+          <a href="summarypage.html">All courses</a>
+          <a href="summarypage.html#six-month-programmes">Six-month programmes</a>
+          <a href="summarypage.html#six-week-courses">Six-week courses</a>
+        </div>
+      </details>
       <a href="feescalculator.html">Pricing</a>
       <a href="contactus.html">Contact</a>
       <a class="primary" href="feescalculator.html">Get a Quote</a>
     </nav>
+    <!-- The ☰ button, it only shows on small screens and runs toggleWebMenu() in script.js -->
     <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
   </div>
-  <!-- Mobile menu: shown on small screens when the menu button is tapped.
-       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
+  <!-- Mobile menu: hidden until you tap the ☰ button on a phone or small screen.
+       toggleWebMenu() in script.js opens and closes it -->
   <div id="webMenu" class="mobile-menu">
     <a href="../index.html">Home</a>
     <a href="aboutus.html">About Us</a>
@@ -54,11 +64,11 @@
         <h2>All courses</h2>
         <p>Here's everything we offer, with the length and price of each course. Click "More info" to see what each one covers.</p>
       </div>
-      <!-- Courses are split into two groups by length -->
+      <!-- The courses are split into two groups by how long they take -->
       <div class="course-groups">
 
-        <!-- Group 1: six-month programmes (R1 500 each) -->
-        <div class="course-group">
+        <!-- Group 1: the six-month programmes (R1,500 each). The id lets the Courses drop-down jump straight here -->
+        <div class="course-group" id="six-month-programmes">
           <h3>Six-month programmes</h3>
           <div class="course-grid">
             <article class="course-card">
@@ -68,7 +78,7 @@
               <div class="course-body">
                 <h3><a href="detailspage.html">Canine Obedience Training</a></h3>
                 <div class="meta">6 months</div>
-                <div class="price">R1 500</div>
+                <div class="price">R1,500</div>
                 <p>Learn how to teach dogs to listen and behave well.</p>
                 <a class="primary" href="detailspage.html">More info</a>
               </div>
@@ -80,7 +90,7 @@
               <div class="course-body">
                 <h3><a href="detailspage-grooming.html">Pet Grooming</a></h3>
                 <div class="meta">6 months</div>
-                <div class="price">R1 500</div>
+                <div class="price">R1,500</div>
                 <p>Professional grooming skills for dogs, cats and other household pets.</p>
                 <a class="primary" href="detailspage-grooming.html">More info</a>
               </div>
@@ -92,7 +102,7 @@
               <div class="course-body">
                 <h3><a href="detailspage-behaviour.html">Animal Behaviour</a></h3>
                 <div class="meta">6 months</div>
-                <div class="price">R1 500</div>
+                <div class="price">R1,500</div>
                 <p>Understand why pets behave the way they do and how to communicate with them.</p>
                 <a class="primary" href="detailspage-behaviour.html">More info</a>
               </div>
@@ -104,7 +114,7 @@
               <div class="course-body">
                 <h3><a href="detailspage-business.html">Pet Business Management</a></h3>
                 <div class="meta">6 months</div>
-                <div class="price">R1 500</div>
+                <div class="price">R1,500</div>
                 <p>Everything you need to start and run your own pet business.</p>
                 <a class="primary" href="detailspage-business.html">More info</a>
               </div>
@@ -112,8 +122,8 @@
           </div>
         </div>
 
-        <!-- Group 2: six-week courses (R750 each) -->
-        <div class="course-group">
+        <!-- Group 2: the six-week courses (R750 each). The id lets the drop-down jump here too -->
+        <div class="course-group" id="six-week-courses">
           <h3>Six-week courses</h3>
           <div class="course-grid">
             <article class="course-card">
@@ -160,7 +170,7 @@
   </section>
 </main>
 
-<!-- Footer: academy name, address and copyright, the same on every page -->
+<!-- Footer at the bottom of every page with the academy name, address and copyright -->
 <footer>
   <div class="container footer-grid">
     <div>
@@ -171,8 +181,9 @@
     </div>
   </div>
 </footer>
-<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
+<!-- Small pop-up message box. showToast() in script.js puts a message in it and shows it for 3 seconds -->
 <div id="toast" class="toast"></div>
+<!-- Links my JavaScript file so the menu, calculator and forms actually work -->
 <script src="../js/script.js"></script>
 </body>
 </html>

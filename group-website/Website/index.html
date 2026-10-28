@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
-<!-- Home page: welcomes visitors and links to the courses and fees calculator -->
+<!-- Home page: the first page people see. It welcomes them and links to the courses and the fees calculator -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Pawsitive Pet Academy: pet care and training courses in Durban.">
 <title>Pawsitive Pet Academy | Home</title>
-<!-- Tab icon and the shared stylesheet used by every page -->
+<!-- The little logo in the browser tab, and my CSS file that styles every page -->
 <link rel="icon" href="assets/images/logo-badge.png">
 <link rel="stylesheet" href="assets/style/main.css">
 </head>
 <body>
 
-<!-- Top strip and header: the same on every page. Only the link marked "active" changes. -->
+<!-- Top bar and header with the logo and the menu. It's the same on every page,
+     only the "active" link changes so you can see which page you're on -->
 <div class="topbar">
   <div class="container">
     <span>&#128062; Pet care and training courses</span><span>Morningside, Durban</span>
@@ -27,15 +28,24 @@
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="pages/aboutus.html">About Us</a>
-      <a href="pages/summarypage.html">Courses</a>
+      <!-- Courses drop-down: click "Courses" and a small menu opens with links to the course groups -->
+      <details class="nav-dropdown">
+        <summary class="nav-dropdown-toggle">Courses</summary>
+        <div class="nav-dropdown-menu">
+          <a href="pages/summarypage.html">All courses</a>
+          <a href="pages/summarypage.html#six-month-programmes">Six-month programmes</a>
+          <a href="pages/summarypage.html#six-week-courses">Six-week courses</a>
+        </div>
+      </details>
       <a href="pages/feescalculator.html">Pricing</a>
       <a href="pages/contactus.html">Contact</a>
       <a class="primary" href="pages/feescalculator.html">Get a Quote</a>
     </nav>
+    <!-- The ☰ button, it only shows on small screens and runs toggleWebMenu() in script.js -->
     <button class="menu-btn" onclick="toggleWebMenu()" aria-label="Open menu">&#9776;</button>
   </div>
-  <!-- Mobile menu: shown on small screens when the menu button is tapped.
-       Needs toggleWebMenu() from script.js, which isn't part of this HTML-only version. -->
+  <!-- Mobile menu: hidden until you tap the ☰ button on a phone or small screen.
+       toggleWebMenu() in script.js opens and closes it -->
   <div id="webMenu" class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="pages/aboutus.html">About Us</a>
@@ -47,7 +57,7 @@
 </header>
 
 <main>
-  <!-- Hero: intro text, main buttons and a few quick facts -->
+  <!-- Hero section: the big welcome at the top, with the main buttons and some quick facts -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -82,7 +92,7 @@
     </div>
   </section>
 
-  <!-- Quick links to the two course groups and the calculator -->
+  <!-- Three cards that link to the two course groups and the fees calculator -->
   <section class="bg-white">
     <div class="container">
       <div class="section-head">
@@ -99,7 +109,7 @@
   </section>
 </main>
 
-<!-- Footer: academy name, address and copyright, the same on every page -->
+<!-- Footer at the bottom of every page with the academy name, address and copyright -->
 <footer>
   <div class="container footer-grid">
     <div>
@@ -110,8 +120,9 @@
     </div>
   </div>
 </footer>
-<!-- Pop-up for short messages, filled in by script.js (not part of this HTML-only version) -->
+<!-- Small pop-up message box. showToast() in script.js puts a message in it and shows it for 3 seconds -->
 <div id="toast" class="toast"></div>
+<!-- Links my JavaScript file so the menu, calculator and forms actually work -->
 <script src="js/script.js"></script>
 </body>
 </html>
