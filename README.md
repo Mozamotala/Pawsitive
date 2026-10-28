@@ -14,7 +14,7 @@ This is the website for **Pawsitive Pet Academy**, a pet care and training acade
 - **Courses:** all seven courses are listed on the Courses page, and every course has its own detail page.
 - **Fees calculator:** tick the courses you want and the subtotal, discount, VAT and total update straight away. Preview and print an itemized estimate from the calculator.
 - **Quote form:** select at least one course and enter a name and valid email to request a quote.
-- **Contact Us:** phone number, email, address, office hours, a map with directions and a message form with input validation. Social media profiles will be added once the academy's real links are available.
+- **Contact Us:** phone number, email, address, office hours, Facebook and Instagram links, a map with directions and a message form with input validation.
 - **About Us:** who Sarah is, the academy's mission and vision, and the team.
 - **Looks right on any screen:** the layout changes for desktop, tablet and phone. No frameworks are used.
 
@@ -163,11 +163,12 @@ Pull Requests merged so far:
 
 | What | Link |
 |---|---|
-| Published website | **To add** once the site is published |
-| Group demo video (YouTube, unlisted) | **To add** |
-| Presentation (PowerPoint) | **To add** to this repository |
-| Mobile app repository | **To add** |
-| Figma wireframes | **To add** |
+| Published website | [pawsitive-pet-academy.web.app](https://pawsitive-pet-academy.web.app) |
+| Part 2 video (YouTube) | [Watch on YouTube](https://www.youtube.com/watch?v=iXkaTIPUEzo) |
+| Final group demo video (YouTube, unlisted) | **To add** |
+| Presentation (PowerPoint) | [`Pawsitive_Full_Presentation_v11.pptx`](Pawsitive_Full_Presentation_v11.pptx) |
+| Mobile app repository | [EMGPSD/xhaw5112-2026-mobile-app-st10510475](https://github.com/EMGPSD/xhaw5112-2026-mobile-app-st10510475) |
+| Figma wireframes (high and low fidelity) | [Open in Figma](https://www.figma.com/design/qrdFFWdxOEHT699YodJ3iU/task-1-part-3-and-part-2?node-id=0-1) |
 
 ---
 
@@ -194,14 +195,15 @@ Website (Task 3 marking criteria):
 - [x] Validate quote and contact forms and show a clear error message for missing courses, name, or invalid email
 - [x] Add a Courses drop-down menu that works on desktop as well as mobile
 - [x] Add an itemized invoice estimate view and print option to the fees calculator
-- [ ] Add the academy's verified Facebook and Instagram profile URLs to Contact Us (the placeholder links have been removed until the URLs are provided)
-- [ ] Publish the website and add the link above, then check the published version matches this repository
+- [x] Add Facebook and Instagram links to Contact Us (they go to the Facebook and Instagram home pages, as the academy is a student project)
+- [x] Publish the website and add the link above, then check the published version matches this repository
 - [x] Remove the leftover "HTML-only version" comments, change `R1 500` to `R1,500`, and add clear comments throughout the HTML and JavaScript
 
 Repository and hand-in:
 
 - [ ] Merge this README and the tidied pages through a Pull Request that someone else reviews
-- [ ] Add the final PowerPoint and the YouTube video link to the repository
+- [x] Add the final PowerPoint to the repository
+- [ ] Add the final YouTube demo video link
 - [ ] Check the repository is public and tidy up branches that are no longer needed
 
 ---
