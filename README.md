@@ -6,6 +6,8 @@ This is the website for **Pawsitive Pet Academy**, a pet care and training acade
 **Location:** Durban, South Africa
 **Module:** XHAW5112 Work Integrated Learning, Meridian Tech Group
 
+> **Latest version:** for the most up-to-date code, please visit our GitHub repository: [EMGPSD/xhaw5112-2026-website-st10510475](https://github.com/EMGPSD/xhaw5112-2026-website-st10510475)
+
 ---
 
 ## What the site does
@@ -188,6 +190,7 @@ Pull Requests merged so far:
 | Presentation (PowerPoint) | [`Pawsitive_Full_Presentation_v11.pptx`](Pawsitive_Full_Presentation_v11.pptx). The last two slides have QR codes for the demo video and the live website |
 | Mobile app repository | [EMGPSD/xhaw5112-2026-mobile-app-st10510475](https://github.com/EMGPSD/xhaw5112-2026-mobile-app-st10510475) |
 | Figma wireframes (high and low fidelity) | [Open in Figma](https://www.figma.com/design/qrdFFWdxOEHT699YodJ3iU/task-1-part-3-and-part-2?node-id=0-1) |
+| Wireframe images (exported from Figma) | [`Wireframes/low-fidelity`](Wireframes/low-fidelity) and [`Wireframes/high-fidelity`](Wireframes/high-fidelity): 6 desktop and 7 mobile screens each, plus an overview |
 
 ---
 
