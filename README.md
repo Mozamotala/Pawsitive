@@ -186,7 +186,7 @@ Pull Requests merged so far:
 |---|---|
 | Published website | [pawsitive-pet-academy.web.app](https://pawsitive-pet-academy.web.app) |
 | Part 2 video (YouTube) | [Watch on YouTube](https://www.youtube.com/watch?v=iXkaTIPUEzo) |
-| Final group demo video (YouTube, unlisted) | **To add** |
+| Final group demo video (YouTube, unlisted) | [Watch on YouTube](https://www.youtube.com/watch?v=toccrtfQlJc) |
 | Presentation (PowerPoint) | [`Pawsitive_Full_Presentation_v11.pptx`](Pawsitive_Full_Presentation_v11.pptx). The last two slides have QR codes for the demo video and the live website |
 | Mobile app repository | [EMGPSD/xhaw5112-2026-mobile-app-st10510475](https://github.com/EMGPSD/xhaw5112-2026-mobile-app-st10510475) |
 | Figma wireframes (high and low fidelity) | [Open in Figma](https://www.figma.com/design/qrdFFWdxOEHT699YodJ3iU/task-1-part-3-and-part-2?node-id=0-1) |
@@ -225,7 +225,7 @@ Repository and hand-in:
 
 - [ ] Merge this README and the tidied pages through a Pull Request that someone else reviews
 - [x] Add the final PowerPoint to the repository
-- [ ] Add the final YouTube demo video link
+- [x] Add the final YouTube demo video link
 - [ ] Check the repository is public and tidy up branches that are no longer needed
 
 ---
